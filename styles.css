@@ -156,3 +156,76 @@ p{margin:8px 0; color:#d8e2ff}
   .footer-left{justify-content:center}
   .subscribe{justify-content:center}
 }
+/* --- Footer clean & centered --- */
+.site-footer {
+  margin-top: 48px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  backdrop-filter: blur(4px);
+}
+.site-footer .footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  text-align: center;
+}
+.site-footer p { color: rgba(255,255,255,.75); }
+
+/* email subscribe */
+.subscribe {
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.subscribe input[type="email"]{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  min-width: 240px;
+  outline: none;
+}
+.subscribe input::placeholder { color: rgba(255,255,255,.6); }
+.subscribe .btn { padding: 10px 14px; border-radius: 10px; }
+
+/* footer links row */
+.footer-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-links a:hover { color: #fff; text-decoration: underline; }
+
+/* --- Hero bullets fix (quita los puntos raros y los centra) --- */
+.hero-bullets{
+  list-style: none;
+  padding-left: 0;
+  margin: 18px auto 0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: rgba(255,255,255,.85);
+}
+.hero-bullets li::before { content: "• "; opacity: .65; }
+
+/* --- Buttons refinados --- */
+.btn { border-radius: 14px; font-weight: 700; }
+.btn-primary { box-shadow: 0 8px 22px rgba(80,140,255,.25); }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-dark { background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.12); }
+.btn-dark:hover { background: rgba(0,0,0,.65); }
+
+/* --- Tarjetas compactas en
