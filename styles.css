@@ -240,3 +240,13 @@ p{margin:8px 0; color:#d8e2ff}
   color: #74c0fc; /* tono más claro al pasar el mouse */
   text-decoration: underline;
 }
+.socials a {
+  color: #4dabf7; /* Azul brillante */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.socials a:hover {
+  color: #74c0fc;
+  text-decoration: underline;
+}
