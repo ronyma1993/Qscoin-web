@@ -1,92 +1,45 @@
-/* ---------- Base ---------- */
-:root{
-  --bg:#0f1217;
-  --panel:#151924;
-  --panel-2:#0e1420;
-  --primary:#4ea3ff;
-  --primary-2:#7aa8ff;
-  --text:#e9eef6;
-  --muted:#95a3b8;
-  --accent:#21d4fd;
-  --accent-2:#b721ff;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 50% -200px, #1b2340 0%, var(--bg) 55%);
-  color:var(--text);
-}
+<div class="container">
+  <!-- Hero actions -->
+  <section>
+    <div class="badge">Quantum-Safe • Post-Quantum Cryptography</div>
+    <h2>Built for a post-quantum world</h2>
+    <p class="muted">
+      QSCOIN protects digital assets against future quantum attacks using modern 
+      post-quantum cryptography and a performance-focused architecture.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#whitepaper">📄 Download Whitepaper</a>
+      <a class="btn ghost" href="#community">💬 Join the Community</a>
+    </div>
+  </section>
 
-/* ---------- Layout ---------- */
-.container{max-width:1000px;margin:0 auto;padding:24px}
-section{
-  background:linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
-  border:1px solid #222a38;
-  border-radius:16px;
-  padding:24px;
-  margin:22px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-section:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
-h1,h2{margin:0 0 12px}
-h1{font-size:40px;letter-spacing:.5px}
-h2{font-size:24px;color:var(--primary)}
-p{margin:8px 0;color:#d7deea}
-.muted{color:var(--muted)}
+  <!-- Key features -->
+  <section>
+    <h2>Key Features</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🔒 Quantum-Safe</h3>
+        <p>Hybrid & PQC-ready signatures designed to resist attacks from large-scale quantum computers.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Throughput</h3>
+        <p>Fast confirmation times and scalable nodes for real-world adoption.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Open & Community-Driven</h3>
+        <p>Transparent roadmap, open governance, and public repos.</p>
+      </div>
+    </div>
+  </section>
 
-/* ---------- Header ---------- */
-header{
-  position:relative;
-  overflow:hidden;
-  border-radius:20px;
-  padding:44px 24px;
-  margin:24px 0;
-  background:linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow:0 12px 40px rgba(33,212,253,.2);
-}
-header::after{
-  content:"";
-  position:absolute;inset:0;
-  background: radial-gradient(600px 220px at 10% -20%, rgba(255,255,255,.25), transparent 60%),
-              radial-gradient(500px 220px at 90% -40%, rgba(255,255,255,.18), transparent 60%);
-  pointer-events:none;
-}
-header .brand{
-  display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;
-}
-header img{width:72px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.3))}
-header h1{font-weight:800}
-header p{font-size:18px;color:#f4f7ff}
-
-/* ---------- Grid cards ---------- */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-}
-
-/* ---------- Feature card ---------- */
-.card{
-  background:linear-gradient(180deg, #101727 0%, #0b101b 100%);
-  border:1px solid #1d2635;
-  border-radius:16px;
-  padding:18px;
-  height:100%;
-}
-.card h3{margin:0 0 8px;color:#9ec7ff;font-size:18px}
-.card p{margin:0;color:#cfe2ff}
-
-/* ---------- Roadmap ---------- */
-ol.roadmap{margin:0;padding-left:18px}
-ol.roadmap li{margin:10px 0;color:#dbe6ff}
-
-/* ---------- Buttons ---------- */
-.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-.btn{
-  --bg: #1b2433;
-  display:inline-flex;align-items:center;gap:8px;
-  padding:12px 18px;border-radius:12px;
-  border:1px
+  <!-- Roadmap -->
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <ol class="roadmap">
+      <li>✅ Phase 1 — Website & Litepaper</li>
+      <li>Phase 2 — Community & Partnerships</li>
+      <li>Phase 3 — Testnet & Exchange Listing</li>
+      <li>Phase 4 — Mainnet & Global Adoption</li>
+    </ol>
+  </section>
+</div>
