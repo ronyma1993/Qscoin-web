@@ -254,3 +254,25 @@ p{margin:8px 0; color:#d8e2ff}
 .community-links a:active {
   color: #ffffff;
 }
+/* Join the Community – colores y estados forzados */
+.community-links a,
+.community-links a:link,
+.community-links a:visited {
+  color: #e6f0ff !important;     /* blanco legible en oscuro */
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+.community-links a:hover,
+.community-links a:focus {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+/* Si quieres un tono propio por red, descomenta: */
+/*
+.community-links a.x       { color: #e6f0ff !important; }
+.community-links a.telegram{ color: #e6f0ff !important; }
+.community-links a.facebook{ color: #e6f0ff !important; }
+.community-links a.email   { color: #e6f0ff !important; }
+*/
