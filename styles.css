@@ -250,3 +250,21 @@ p{margin:8px 0; color:#d8e2ff}
   color: #74c0fc;
   text-decoration: underline;
 }
+/* Join the Community: colores de enlaces */
+.community-links a,
+.community-links a:link,
+.community-links a:visited {
+  color: #a9d8ff;         /* azul claro legible sobre fondo oscuro */
+  font-weight: 600;
+  text-decoration: none;  /* sin subrayado por defecto */
+}
+
+.community-links a:hover,
+.community-links a:focus {
+  color: #d3ecff;         /* un poco más claro al pasar el mouse */
+  text-decoration: underline;
+}
+
+.community-links a:active {
+  color: #ffffff;
+}
