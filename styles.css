@@ -276,3 +276,12 @@ p{margin:8px 0; color:#d8e2ff}
 .community-links a.facebook{ color: #e6f0ff !important; }
 .community-links a.email   { color: #e6f0ff !important; }
 */
+.community-links a,
+.community-links a:link,
+.community-links a:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+.community-links a:hover {
+  color: #d3ecff !important;
+}
