@@ -43,3 +43,31 @@
     </ol>
   </section>
 </div>
+/* Social footer */
+footer{
+  opacity:.95;
+  text-align:center;
+  margin:32px 0 40px;
+  color:#a8b6cf;
+}
+footer .social{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+footer .social a{
+  padding:10px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#dbe6ff;
+  background:#0f1626;
+  border:1px solid #25314a;
+  transition:transform .15s ease, border-color .2s ease, background .2s ease;
+}
+footer .social a:hover{
+  transform:translateY(-1px);
+  border-color:#3d4e73;
+  background:#131c2e;
+}
