@@ -2,187 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QSCOIN | Quantum-Safe Cryptocurrency</title>
-  <meta name="description" content="QSCOIN is a quantum-safe cryptocurrency built with post-quantum cryptography to secure digital assets against future quantum attacks." />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Cache bust -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="QSCOIN | Quantum-Safe Cryptocurrency" />
-  <meta property="og:description" content="Future-proof your assets with post-quantum security." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://qscoin.org" />
-  <meta property="og:image" content="https://qscoin.org/logo.png" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Project",
-    "name": "QSCOIN",
-    "url": "https://qscoin.org",
-    "description": "Quantum-safe cryptocurrency using post-quantum cryptography.",
-    "logo": "https://qscoin.org/logo.png"
-  }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QSCOIN | Quantum-Safe Coin</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <meta name="description" content="QSCOIN is a next-generation, quantum-safe cryptocurrency using post-quantum cryptography (PQC)."/>
 </head>
 <body>
-  <!-- ===== Nav ===== -->
-  <nav class="nav">
-    <a href="#hero" class="brand">
-      <img src="logo.png" alt="QSCOIN Logo" />
-      <span>QSCOIN</span>
-    </a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#community">Community</a>
-    </div>
-  </nav>
-
-  <!-- ===== Hero ===== -->
-  <header id="hero" class="hero">
-    <img src="logo.png" alt="QSCOIN logo" class="hero-logo" />
+  <!-- HERO -->
+  <section class="hero">
+    <img class="logo" src="logo.png" alt="QSCOIN logo" width="96" height="96"/>
     <h1>QSCOIN</h1>
     <p class="subtitle">The Quantum-Safe Cryptocurrency</p>
-    <div class="actions">
-      <a class="btn primary" href="whitepaper.pdf" target="_blank" rel="noopener">📄 Download Whitepaper</a>
-      <a class="btn" href="#community">💬 Join Community</a>
-    </div>
-    <p class="tagline">Future-proof security • Post-quantum cryptography • Open development</p>
-  </header>
 
-  <!-- ===== About ===== -->
-  <section id="about" class="card">
-    <h2>What is QSCOIN?</h2>
-    <p>
-      QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers.
-      We use <strong>post-quantum cryptography (PQC)</strong> to protect keys, transactions, and wallets against
-      quantum attacks, keeping your assets safe for the long term.
-    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="whitepaper.pdf" target="_blank" rel="noopener">
+        📄 Download Whitepaper
+      </a>
+      <a class="btn btn-dark" href="https://t.me/qscoin" target="_blank" rel="noopener">
+        💬 Join Community
+      </a>
+    </div>
+
+    <ul class="hero-bullets">
+      <li>Future-proof security</li>
+      <li>Post-quantum cryptography</li>
+      <li>Open development</li>
+    </ul>
   </section>
 
-  <!-- ===== Features ===== -->
-  <section id="features" class="grid">
-    <div class="card">
-      <h3>🔒 Quantum-Safe</h3>
-      <p>Hybrid signature schemes (PQC + classical) to ensure security today and tomorrow.</p>
-    </div>
-    <div class="card">
-      <h3>⚡ Fast & Scalable</h3>
-      <p>Lean design targeting low fees and fast confirmations without sacrificing security.</p>
-    </div>
-    <div class="card">
-      <h3>🌍 Community-Driven</h3>
-      <p>Transparent roadmap, open development, and inclusive governance over time.</p>
-    </div>
-  </section>
+  <main class="container">
+    <!-- WHAT IS -->
+    <section class="card">
+      <h2>What is QSCOIN?</h2>
+      <p>
+        QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers.
+        We use post-quantum cryptography (PQC) to protect keys, transactions and wallets against quantum attacks,
+        keeping your assets safe for the long term.
+      </p>
+    </section>
 
-  <!-- ===== Tokenomics (placeholder editable) ===== -->
-  <section id="tokenomics" class="card">
-    <h2>Tokenomics</h2>
-    <div class="stats">
-      <div class="stat">
-        <span class="label">Ticker</span>
-        <span class="value">QSC</span>
+    <!-- FEATURES -->
+    <section class="grid">
+      <div class="card">
+        <h3>🔒 Quantum-Safe</h3>
+        <p>Hybrid signature schemes (PQC + classical) to ensure security today and tomorrow.</p>
       </div>
-      <div class="stat">
-        <span class="label">Supply (planned)</span>
-        <span class="value">TBD</span>
+      <div class="card">
+        <h3>⚡ Fast & Scalable</h3>
+        <p>Lean design targeting low fees and fast confirmations without sacrificing security.</p>
       </div>
-      <div class="stat">
-        <span class="label">Consensus (R&D)</span>
-        <span class="value">Hybrid + PQC</span>
+      <div class="card">
+        <h3>🌐 Community-Driven</h3>
+        <p>Transparent roadmap, open development and inclusive governance over time.</p>
       </div>
-      <div class="stat">
-        <span class="label">Allocation (draft)</span>
-        <span class="value">Community-first</span>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section class="card">
+      <h2>Tokenomics</h2>
+      <div class="tokenomics">
+        <div><span>Ticker</span><strong>QSC</strong></div>
+        <div><span>Supply (planned)</span><strong>TBD</strong></div>
+        <div><span>Consensus (R&D)</span><strong>Hybrid + PQC</strong></div>
+        <div><span>Allocation (draft)</span><strong>Community-first</strong></div>
+      </div>
+      <p class="note">* Figures above are work-in-progress and subject to community review.</p>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="card">
+      <h2>Roadmap</h2>
+      <ol class="roadmap">
+        <li>Phase 1 – Launch website & litepaper ✅</li>
+        <li>Phase 2 – Community growth & partnerships</li>
+        <li>Phase 3 – Listing & wallet integrations</li>
+        <li>Phase 4 – Global adoption & ecosystem</li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card" id="faq">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What makes QSCOIN “quantum-safe”?</summary>
+        <p>We adopt post-quantum cryptography (PQC) for signatures and key management, and plan hybrid schemes for compatibility.</p>
+      </details>
+
+      <details>
+        <summary>Is there a testnet? When?</summary>
+        <p>Testnet is part of the Phase 2/3 milestones. Dates will be announced in the community channels.</p>
+      </details>
+
+      <details>
+        <summary>How can I participate?</summary>
+        <p>Join the community, contribute to the code/feedback, and help with outreach and translations.</p>
+      </details>
+
+      <details>
+        <summary>Is QSCOIN audited?</summary>
+        <p>Security is a priority. We plan third-party audits before mainnet and any major releases.</p>
+      </details>
+
+      <details>
+        <summary>What are the main risks?</summary>
+        <p>Market risk, regulatory uncertainty, and implementation risk. DYOR—this is not financial advice.</p>
+      </details>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="card">
+      <h2>Join the Community</h2>
+      <p>Be part of the quantum-safe future. Follow updates and join the discussion:</p>
+      <div class="socials">
+        <a class="chip" href="https://twitter.com/qscoin" target="_blank" rel="noopener">🕊️ X/Twitter</a>
+        <a class="chip" href="https://t.me/qscoin" target="_blank" rel="noopener">📨 Telegram</a>
+        <a class="chip" href="mailto:contact@qscoin.org">✉️ contact@qscoin.org</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- SINGLE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> QSCOIN — All rights reserved</p>
+
+      <form class="subscribe" action="https://formspree.io/f/your-id" method="POST">
+        <label for="email" class="sr-only">Email</label>
+        <input id="email" type="email" name="email" placeholder="Subscribe for updates" required />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+
+      <div class="footer-links">
+        <a href="whitepaper.pdf" target="_blank" rel="noopener">Litepaper</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://t.me/qscoin" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://discord.gg/your-invite" target="_blank" rel="noopener">Discord</a>
       </div>
     </div>
-    <p class="note">* Figures above are work-in-progress and subject to community review.</p>
-  </section>
-
-  <!-- ===== Roadmap ===== -->
-  <section id="roadmap" class="card">
-    <h2>Roadmap</h2>
-    <ol class="timeline">
-      <li class="done">Phase 1 – Launch website & litepaper</li>
-      <li>Phase 2 – Community growth & partnerships</li>
-      <li>Phase 3 – Listing & wallet integrations</li>
-      <li>Phase 4 – Global adoption & ecosystem</li>
-    </ol>
-  </section>
-<!-- ===== FAQ ===== -->
-<section id="faq" class="card">
-  <h2>FAQ</h2>
-  <div class="faq">
-    <details>
-      <summary>¿Qué hace a QSCOIN “quantum-safe”?</summary>
-      <p>Usamos criptografía post-cuántica (PQC) para firmas y gestión de claves. El enfoque es híbrido (PQC + clásica) para compatibilidad hoy y resistencia a ataques cuánticos mañana.</p>
-    </details>
-    <details>
-      <summary>¿Habrá testnet? ¿Cuándo?</summary>
-      <p>Sí. El plan es publicar un <em>litepaper</em> técnico, luego testnet pública con auditorías de terceros. Fechas se anunciarán en la comunidad.</p>
-    </details>
-    <details>
-      <summary>¿Cómo puedo participar en el proyecto?</summary>
-      <p>Únete al Discord/Telegram, participa en discusiones de gobernanza y pruebas de testnet. También habrá programas de <em>grants</em> y recompensas por contribuciones.</p>
-    </details>
-    <details>
-      <summary>¿Está auditado?</summary>
-      <p>Las auditorías forman parte del roadmap. Se priorizarán librerías PQC bien revisadas y estándares respaldados por NIST.</p>
-    </details>
-    <details>
-      <summary>¿Cuáles son los riesgos?</summary>
-      <p>Riesgo tecnológico (madurez PQC, implementación), de mercado (adopción), regulatorio y de ejecución. Fomentamos transparencia y validación abierta.</p>
-    </details>
-  </div>
-</section>
-  <!-- ===== Community ===== -->
-  <section id="community" class="card">
-    <h2>Join the Community</h2>
-    <p>Be part of the quantum-safe future. Follow updates and join the discussion:</p>
-    <div class="actions">
-      <!-- Reemplaza los # con tus enlaces reales -->
-      <a class="btn" href="#" target="_blank" rel="noopener">🐦 Twitter/X</a>
-      <a class="btn" href="#" target="_blank" rel="noopener">📢 Telegram</a>
-      <a class="btn" href="#" target="_blank" rel="noopener">🗣️ Discord</a>
-      <a class="btn" href="mailto:contact@qscoin.org">✉️ contact@qscoin.org</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-  <div class="footer-left">
-    <img src="logo.png" alt="QSCOIN" class="footer-logo">
-    <div>© 2025 QSCOIN — All rights reserved</div>
-  </div>
-
-  <form class="subscribe" action="https://formspree.io/f/your-id" method="POST">
-    <label for="email" class="sr-only">Subscribe for updates</label>
-    <input id="email" name="email" type="email" placeholder="your@email.com" required>
-    <button type="submit" class="btn primary">Subscribe</button>
-  </form>
-
-  <div class="footer-links">
-    <a href="whitepaper.pdf" target="_blank" rel="noopener">Whitepaper</a>
-    <a href="#investors">Investors</a>
-    <a href="#faq">FAQ</a>
-    <span class="sep">•</span>
-    <!-- Reemplaza # con tus enlaces reales -->
-    <a href="#" target="_blank" rel="noopener">X</a>
-    <a href="#" target="_blank" rel="noopener">Telegram</a>
-    <a href="#" target="_blank" rel="noopener">Discord</a>
-  </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
