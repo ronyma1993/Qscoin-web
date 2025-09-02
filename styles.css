@@ -229,3 +229,14 @@ p{margin:8px 0; color:#d8e2ff}
 .btn-dark:hover { background: rgba(0,0,0,.65); }
 
 /* --- Tarjetas compactas en
+.card a {
+  color: #4dabf7; /* azul celeste brillante */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #74c0fc; /* tono más claro al pasar el mouse */
+  text-decoration: underline;
+}
