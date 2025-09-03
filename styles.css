@@ -301,3 +301,28 @@ p{margin:8px 0; color:#d8e2ff}
 .community-icons a:hover {
   color: #00bfff; /* Azul brillante al pasar el cursor */
 }
+/* Iconos con colores oficiales */
+.community-icons a {
+  font-size: 32px;
+  transition: color 0.3s ease;
+}
+
+.community-icons a[aria-label*="X"] i {
+  color: #000000; /* Negro para X */
+}
+
+.community-icons a[aria-label*="Telegram"] i {
+  color: #0088cc; /* Celeste oficial de Telegram */
+}
+
+.community-icons a[aria-label*="Facebook"] i {
+  color: #1877F2; /* Azul oficial de Facebook */
+}
+
+.community-icons a[aria-label*="Email"] i {
+  color: #D44638; /* Rojo de Gmail */
+}
+
+.community-icons a:hover i {
+  opacity: 0.7; /* Al pasar el mouse, baja un poco la opacidad */
+}
