@@ -285,3 +285,19 @@ p{margin:8px 0; color:#d8e2ff}
 .community-links a:hover {
   color: #d3ecff !important;
 }
+.community-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.community-icons a {
+  font-size: 32px;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.community-icons a:hover {
+  color: #00bfff; /* Azul brillante al pasar el cursor */
+}
