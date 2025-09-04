@@ -202,3 +202,19 @@ html[data-theme="dark"] .community-icons a{
 
 /* ---------- Footer ---------- */
 .site-footer{text-align:center;color:var(--muted);font-size:14px;padding:26px 12px 40px}
+/* --- FIX layout mobile-first --- */
+.grid{
+  display:grid;
+  gap:14px;
+  grid-template-columns: 1fr;   /* siempre 1 columna por defecto (móvil) */
+}
+@media (min-width: 900px){
+  .grid{ grid-template-columns: repeat(3, 1fr); } /* 3 columnas en pantallas grandes */
+}
+
+/* Botones en móvil a 100% si quieres más consistencia */
+.actions .btn{ min-width: 230px; }
+@media (max-width: 420px){
+  .actions{ gap:10px; }
+  .actions .btn{ width:100%; }
+}
