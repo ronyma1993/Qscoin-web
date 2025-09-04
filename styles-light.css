@@ -1,60 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QSCOIN | Quantum-Safe Coin</title>
-  <meta name="description" content="QSCOIN is a next-generation, quantum-safe cryptocurrency using post-quantum cryptography (PQC)."/>
-  <meta name="theme-color" content="#0b1220"/>
-  <link rel="stylesheet" href="styles-light.css?v=20"/>
-  <link rel="icon" href="favicon.ico"/>
-  <link rel="apple-touch-icon" href="logo.png"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-</head>
-<body>
+/* Fondo general */
+body {
+  background: #ffffff;
+  color: #0f172a;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
 
-  <!-- HERO -->
-  <section class="hero hero-gradient reveal">
-    <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo"/>
-    <p class="subtitle">Quantum-Safe Cryptocurrency</p>
+/* HERO */
+.hero.hero-gradient {
+  margin: 28px auto;
+  padding: 56px 20px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  background-size: 200% 200%;
+  animation: qsgshift 16s ease infinite;
+  color: #fff;
+  box-shadow: 0 18px 50px rgba(34,56,115,.25);
+  border: none;
+}
 
-    <div class="actions">
-      <a class="btn btn-primary" href="whitepaper.pdf" target="_blank" rel="noopener">Whitepaper</a>
-      <a class="btn btn-primary" href="https://t.me/qscoin" target="_blank" rel="noopener">Join Community</a>
-    </div>
+@keyframes qsgshift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
 
-    <ul class="hero-bullets">
-      <li>Future-proof security</li>
-      <li>Post-quantum cryptography</li>
-      <li>Open development</li>
-    </ul>
-  </section>
+/* LOGO */
+.hero-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.25));
+}
 
-  <main class="container">
-    <!-- WHAT IS -->
-    <section class="card reveal">
-      <h2>What is QSCOIN?</h2>
-      <p>
-        QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers.
-        We use post-quantum cryptography (PQC) to protect keys, transactions and wallets against quantum attacks,
-        keeping your assets safe for the long term.
-      </p>
-    </section>
-  </main>
+.subtitle {
+  color: rgba(255,255,255,.95);
+  font-size: 1.25rem;
+  margin-top: 0;
+}
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> QSCOIN — All rights reserved</p>
-  </footer>
+/* BOTONES */
+.actions {
+  margin: 24px 0;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 6px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+.btn-primary {
+  background: linear-gradient(90deg,#3B82F6,#6366F1);
+  color: #fff;
+  border: none;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const els = document.querySelectorAll('.reveal');
-    const onScroll = () => {
-      const trigger = window.innerHeight * 0.88;
-      els.forEach(el => { if (el.getBoundingClientRect().top < trigger) el.classList.add('show'); });
-    };
-    onScroll();
-    document.addEventListener('scroll', onScroll, {passive:true});
-  </script>
-</body>
-</html>
+/* Bullets */
+.hero-bullets {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.hero-bullets li {
+  margin: 8px 0;
+  color: rgba(255,255,255,.95);
+}
+
+/* Cards */
+.card {
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow: 0 10px 30px rgba(15,23,42,.06);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+h2 {
+  color: #0f172a;
+}
+
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(15,23,42,.08);
+  text-align: center;
+  padding: 20px;
+}
