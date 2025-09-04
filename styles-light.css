@@ -160,3 +160,79 @@ summary{cursor:pointer;font-weight:700;color:var(--ink)}
 /* ---- Reveal on scroll ---- */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;will-change:opacity,transform}
 .reveal.show{opacity:1;transform:none}
+/* =========================
+   FIX hero gradient + logo
+   ========================= */
+
+/* Paleta del hero (azules neutros) */
+:root{
+  --hero-start: #eaf2ff;   /* muy claro al centro */
+  --hero-mid:   #8fb5ff;   /* azul claro */
+  --hero-end:   #4d7cff;   /* azul medio */
+}
+
+/* Fuerza el degradado del hero y su glow suave */
+.hero{
+  /* asegura que no quede blanco */
+  background:
+    radial-gradient(1200px 400px at 50% 20%, rgba(255,255,255,.45), transparent 60%),
+    linear-gradient(180deg, var(--hero-start) 0%, var(--hero-mid) 45%, var(--hero-end) 100%) !important;
+  color:#0b1220;
+  border: 1px solid rgba(13, 27, 69, .10);
+  border-radius: 24px;
+  padding: 56px 20px;
+  box-shadow: 0 30px 80px rgba(28, 54, 122, .18);
+}
+
+/* Halo muy suave detrás del logo para que destaque */
+.hero::before{
+  content:"";
+  position:absolute;
+  left:50%; top:92px; transform:translateX(-50%);
+  width: 240px; height: 240px;
+  background: radial-gradient(closest-side, rgba(255,255,255,.55), rgba(255,255,255,0));
+  filter: blur(6px);
+  pointer-events:none;
+}
+
+/* Tamaño del logo (PNG transparente) */
+.hero-logo{
+  display:block;
+  margin: 0 auto 14px;
+  width: clamp(120px, 18vw, 170px);   /* más grande en mobile */
+  height:auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Título centrado y legible sobre el azul */
+.hero h1{ 
+  font-size: clamp(28px, 6vw, 44px);
+  letter-spacing:.4px;
+  color:#0b172a;
+}
+
+/* Subtítulo */
+.subtitle{
+  color: rgba(10,23,53,.85);
+}
+
+/* Botones iguales (ambos sólidos) */
+.actions{ gap: 12px; justify-content:center; flex-wrap:wrap; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 12px 18px; border-radius: 14px; font-weight: 800;
+  border:1px solid rgba(12, 26, 64, .12);
+  box-shadow: 0 10px 26px rgba(24, 60, 128, .18);
+}
+.btn-primary,
+.btn-ghost{
+  background: linear-gradient(135deg, #5a7bff, #6a88ff 60%, #7b93ff);
+  color:#fff !important;
+}
+.btn:hover{ transform: translateY(-1px); }
+
+/* Píldoras bajo el hero un poco más oscuras para contraste */
+.hero-bullets{ color: rgba(10,23,53,.9); }
+
+/* Contiene posicionamiento del ::before del hero */
+.hero{ position: relative; overflow: hidden; }
