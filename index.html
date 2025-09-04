@@ -61,7 +61,20 @@
 
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
-<body>
+<script>
+  // Muestra .reveal cuando entra en viewport
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Fallback: si el navegador no soporta IO
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
+  }
+</script>
+  <body>
 
     <!-- HERO -->
 <section class="hero reveal">
