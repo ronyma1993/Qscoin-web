@@ -1,3 +1,7 @@
+/* ================================
+   QSCOIN — styles.css (light/dark)
+   ================================ */
+
 /* ---------- Tokens (light por defecto) ---------- */
 :root{
   --bg:#f6f8fb;
@@ -6,7 +10,7 @@
   --muted:#475569;
   --border:rgba(15,23,42,.10);
 
-  /* Gradiente azul (neutro, NO púrpura) */
+  /* Gradiente azul neutro (sin púrpura) */
   --blue-1:#a9d2ff;
   --blue-2:#7bb4ff;
   --blue-3:#4f8cff;
@@ -17,6 +21,8 @@
   --btn-end:#4f6dff;
 
   --panel:#f8fbff;
+
+  --focus:#2563eb22;
 }
 
 /* ---------- Dark mode ---------- */
@@ -27,9 +33,10 @@ html[data-theme="dark"]{
   --muted:#a7b3c9;
   --border:rgba(255,255,255,.08);
 
-  --blue-1:#264d8e;
-  --blue-2:#1f3f7a;
-  --blue-3:#182f5c;
+  /* Azul profundo para fondos/botones */
+  --blue-1:#2a3f66;
+  --blue-2:#20365c;
+  --blue-3:#182e51;
 
   --shadow:0 16px 36px rgba(0,0,0,.45);
 
@@ -37,6 +44,13 @@ html[data-theme="dark"]{
   --btn-end:#5ea2ff;
 
   --panel:#0e1526;
+
+  --focus:#60a5fa22;
+}
+
+/* Respeta preferencia del sistema si no se ha pulsado el toggle */
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){ data-theme: dark; }
 }
 
 /* ---------- Base ---------- */
@@ -50,9 +64,14 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible, button:focus-visible{outline:2px solid transparent; box-shadow:0 0 0 4px var(--focus); border-radius:12px}
 
 .container{max-width:1100px;margin:0 auto;padding:0 16px 60px}
 h1,h2,h3{letter-spacing:.2px}
+h2{font-size:26px;margin-bottom:10px}
+h3{font-size:20px;margin-bottom:6px}
 
 /* ---------- Toggle de tema ---------- */
 .theme-toggle{
@@ -62,10 +81,8 @@ h1,h2,h3{letter-spacing:.2px}
   background: var(--card); color: var(--text);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  cursor: pointer;
-  font-weight: 700;
+  cursor: pointer; font-weight: 700;
 }
-.theme-toggle i{font-size: 14px}
 .theme-toggle span{font-size: 13px}
 
 /* ---------- Reveal ---------- */
@@ -75,40 +92,40 @@ h1,h2,h3{letter-spacing:.2px}
 /* ---------- HERO ---------- */
 .hero{
   margin: 18px auto 14px;
-  padding: 44px 18px 28px;
+  padding: 48px 18px 30px;
   text-align:center;
   border-radius: 22px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   color:#fff;
 
-  /* Fondo azul + centro más blanco para que el logo resalte */
+  /* Fondo: gradiente azul + "spot" claro centrado para que el átomo resalte */
   background:
-    radial-gradient(260px 190px at 50% 105px, rgba(255,255,255,.82) 0%, rgba(255,255,255,.30) 52%, rgba(255,255,255,0) 62%),
-    linear-gradient(180deg, var(--blue-1), var(--blue-2) 58%, var(--blue-3));
+    radial-gradient(280px 200px at 50% 120px, rgba(255,255,255,.72), rgba(255,255,255,0) 60%),
+    linear-gradient(180deg, var(--blue-1), var(--blue-2) 55%, var(--blue-3));
 }
 
+/* Logo GRANDE (pediste que se note) */
 .hero-logo{
-  /* Hacer el logo GRANDE en móvil y desktop */
-  width: clamp(200px, 42vw, 360px);
-  height: auto;
-  display:block;
-  margin: 2px auto 10px;
+  width: clamp(220px, 42vw, 360px);
+  height:auto;
+  margin: 2px auto 12px;
   filter: drop-shadow(0 10px 22px rgba(0,0,0,.18));
 }
 
 .hero-tagline{
-  font-size: clamp(20px, 5vw, 30px);
-  font-weight: 700;
+  font-size: clamp(22px, 6vw, 32px);
+  font-weight: 800;
   color: #eef5ff;
-  margin: 6px 0 10px;
+  margin: 6px 0 12px;
 }
 
-/* Botones */
-.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
+.actions{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:14px 0 8px
+}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  padding:14px 18px;border-radius:14px;font-weight:800;text-decoration:none;
+  padding:14px 18px;border-radius:14px;font-weight:800;
   border:1px solid rgba(255,255,255,.35);
   box-shadow:0 10px 24px rgba(0,0,0,.18);
   transition: transform .15s ease, filter .15s ease;
@@ -123,7 +140,7 @@ h1,h2,h3{letter-spacing:.2px}
 }
 .hero-bullets li::before{content:"• ";opacity:.7}
 
-/* ---------- Cards & Grid ---------- */
+/* ---------- Cards ---------- */
 .card{
   background: var(--card);
   border:1px solid var(--border);
@@ -133,20 +150,14 @@ h1,h2,h3{letter-spacing:.2px}
   margin:16px auto;
   max-width:900px;
 }
-.card h2{font-size:26px;margin-bottom:10px}
-.card h3{font-size:22px;margin-bottom:6px}
+.card p{color: var(--text)}
 
+/* ---------- Grid de features ---------- */
 .grid{
-  display:grid;
-  gap:14px;
-  margin:14px auto;
-  max-width:1100px;
-  padding:0 2px;
+  display:grid; gap:14px; margin:14px auto; max-width:1100px; padding:0 2px;
   grid-template-columns:repeat(3, 1fr);
 }
-@media (max-width: 900px){
-  .grid{grid-template-columns:1fr}
-}
+@media (max-width: 900px){ .grid{grid-template-columns:1fr} }
 
 /* ---------- Tokenomics ---------- */
 .tokenomics{list-style:none;padding-left:0;display:grid;gap:8px}
@@ -172,22 +183,18 @@ h1,h2,h3{letter-spacing:.2px}
   background: var(--panel);
   overflow:hidden;
 }
-.accordion-header{margin:0}
+.accordion-item summary{
+  list-style:none;
+}
+.accordion-item summary::-webkit-details-marker{display:none}
 .accordion-trigger{
   appearance:none;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;
   padding:14px 16px;font-weight:800;color:var(--text);
   display:flex;align-items:center;justify-content:space-between;
 }
-.accordion-trigger .chev{
-  width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
-  transform:rotate(45deg);transition:transform .2s ease;
-}
-.accordion-trigger[aria-expanded="true"] .chev{transform:rotate(-135deg)}
 .accordion-panel{
-  padding:0 16px 0;color:var(--text);
-  max-height:0;overflow:hidden;transition:max-height .3s ease, padding .3s ease;
+  padding:0 16px 14px;color:var(--text);
 }
-.accordion-panel.open{ /* padding-bottom controlado por JS */ }
 
 /* ---------- Community ---------- */
 .community-icons{display:flex;gap:12px;margin-top:8px;justify-content:center}
@@ -201,20 +208,23 @@ html[data-theme="dark"] .community-icons a{
 .community-icons a:hover{filter:brightness(1.05)}
 
 /* ---------- Footer ---------- */
-.site-footer{text-align:center;color:var(--muted);font-size:14px;padding:26px 12px 40px}
-/* --- FIX layout mobile-first --- */
-.grid{
-  display:grid;
-  gap:14px;
-  grid-template-columns: 1fr;   /* siempre 1 columna por defecto (móvil) */
-}
-@media (min-width: 900px){
-  .grid{ grid-template-columns: repeat(3, 1fr); } /* 3 columnas en pantallas grandes */
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  padding:26px 12px 40px
 }
 
-/* Botones en móvil a 100% si quieres más consistencia */
-.actions .btn{ min-width: 230px; }
-@media (max-width: 420px){
-  .actions{ gap:10px; }
-  .actions .btn{ width:100%; }
+/* ---------- Utilidades ---------- */
+.small{font-size:.925rem;color:var(--muted)}
+.center{text-align:center}
+.hide{display:none!important}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 540px){
+  .hero{padding:42px 14px 26px;border-radius:20px}
+  .actions{gap:10px}
+  .btn{padding:12px 16px}
+  .card{padding:16px}
+  .hero-bullets{gap:12px}
 }
