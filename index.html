@@ -18,6 +18,19 @@
 
   <!-- Overrides mínimos para hero degradado + botones -->
   <style>
+   /* Logo fusionado con el degradado */
+.hero.hero-gradient .hero-logo {
+  background: transparent;       /* elimina cualquier fondo extra */
+  border-radius: 12px;           /* suaviza esquinas si es cuadrado */
+  mix-blend-mode: screen;        /* fusiona el negro con el degradado */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Pequeño efecto al pasar el cursor */
+.hero.hero-gradient .hero-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+}
     body { background:#ffffff; color:#0f172a; }
 
     .hero.hero-gradient{
