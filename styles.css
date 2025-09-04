@@ -6,7 +6,7 @@
   --muted:#475569;
   --border:rgba(15,23,42,.10);
 
-  /* Gradiente azul neutro */
+  /* Gradiente azul (neutro, NO púrpura) */
   --blue-1:#a9d2ff;
   --blue-2:#7bb4ff;
   --blue-3:#4f8cff;
@@ -74,22 +74,37 @@ h1,h2,h3{letter-spacing:.2px}
 
 /* ---------- HERO ---------- */
 .hero{
-  margin: 18px auto 14px; padding: 44px 18px 28px; text-align:center;
-  border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow);
+  margin: 18px auto 14px;
+  padding: 44px 18px 28px;
+  text-align:center;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   color:#fff;
+
+  /* Fondo azul + centro más blanco para que el logo resalte */
   background:
-    radial-gradient(200px 150px at 50% 120px, rgba(255,255,255,.65), rgba(255,255,255,0) 60%),
-    linear-gradient(180deg, var(--blue-1), var(--blue-2) 55%, var(--blue-3));
+    radial-gradient(260px 190px at 50% 105px, rgba(255,255,255,.82) 0%, rgba(255,255,255,.30) 52%, rgba(255,255,255,0) 62%),
+    linear-gradient(180deg, var(--blue-1), var(--blue-2) 58%, var(--blue-3));
 }
+
 .hero-logo{
-  width: clamp(240px, 36vw, 320px); height:auto; display:block; margin:2px auto 10px;
+  /* Hacer el logo GRANDE en móvil y desktop */
+  width: clamp(200px, 42vw, 360px);
+  height: auto;
+  display:block;
+  margin: 2px auto 10px;
   filter: drop-shadow(0 10px 22px rgba(0,0,0,.18));
 }
+
 .hero-tagline{
   font-size: clamp(20px, 5vw, 30px);
-  font-weight: 700; color: #eef5ff;
+  font-weight: 700;
+  color: #eef5ff;
   margin: 6px 0 10px;
 }
+
+/* Botones */
 .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -100,6 +115,7 @@ h1,h2,h3{letter-spacing:.2px}
   color:#fff;background: linear-gradient(135deg, var(--btn-start), var(--btn-end));
 }
 .btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
+
 .hero-bullets{
   list-style:none;margin:14px auto 0;
   display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
@@ -109,17 +125,28 @@ h1,h2,h3{letter-spacing:.2px}
 
 /* ---------- Cards & Grid ---------- */
 .card{
-  background: var(--card); border:1px solid var(--border);
-  border-radius:18px; padding:18px 18px 16px; box-shadow: var(--shadow);
-  margin:16px auto; max-width:900px;
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px 18px 16px;
+  box-shadow: var(--shadow);
+  margin:16px auto;
+  max-width:900px;
 }
 .card h2{font-size:26px;margin-bottom:10px}
 .card h3{font-size:22px;margin-bottom:6px}
+
 .grid{
-  display:grid; gap:14px; margin:14px auto; max-width:1100px; padding:0 2px;
+  display:grid;
+  gap:14px;
+  margin:14px auto;
+  max-width:1100px;
+  padding:0 2px;
   grid-template-columns:repeat(3, 1fr);
 }
-@media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+@media (max-width: 900px){
+  .grid{grid-template-columns:1fr}
+}
 
 /* ---------- Tokenomics ---------- */
 .tokenomics{list-style:none;padding-left:0;display:grid;gap:8px}
@@ -127,7 +154,9 @@ h1,h2,h3{letter-spacing:.2px}
   background: var(--panel);
   border:1px solid var(--border);
   color: var(--text);
-  padding:10px 12px; border-radius:10px; font-size:15px;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:15px;
 }
 .note{color: var(--muted); font-size:13px}
 
@@ -138,7 +167,9 @@ h1,h2,h3{letter-spacing:.2px}
 /* ---------- Accordion (FAQ) ---------- */
 .accordion{display:grid;gap:10px}
 .accordion-item{
-  border:1px solid var(--border); border-radius:12px; background: var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  background: var(--panel);
   overflow:hidden;
 }
 .accordion-header{margin:0}
