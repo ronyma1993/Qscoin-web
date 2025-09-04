@@ -1,161 +1,162 @@
-/* ========== QSCOIN LIGHT THEME ========== */
+/* =======================
+   QSCOIN — LIGHT FUTURISTIC THEME
+   ======================= */
 
-/* Tokens */
+/* ---- Tokens ---- */
 :root{
-  --bg:#ffffff;
-  --ink:#0a1220;            /* texto principal */
-  --muted:#5b6b83;          /* texto secundario */
-  --panel:#ffffff;          /* tarjetas */
-  --border:#dfe8ff;         /* borde azulado sutil */
-  --soft:#f6f9ff;           /* fondo suave para secciones */
-  --primary:#196cff;        /* azul eléctrico */
-  --primary-2:#8a5bff;      /* violeta sutil */
-  --ring:#bcd2ff;           /* resalto */
-  --shadow:0 12px 30px rgba(45,75,140,.10);
+  --bg: #f6f9ff;          /* fondo general muy claro */
+  --ink: #0f172a;         /* texto principal (azul gris oscuro) */
+  --muted: #475569;       /* texto secundario */
+  --primary-50:#e6f2ff;
+  --primary-200:#b7d2ff;
+  --primary-400:#66a6ff;  /* azul medio */
+  --primary-600:#1e73ff;  /* azul vivo */
+  --primary-700:#0d57e6;  /* hover */
+  --primary-800:#003d99;  /* active */
+  --card:#ffffff;
+  --border:#e6eef9;
+  --shadow: 0 10px 25px rgba(15,23,42,.08);
 }
 
-/* Reset básico */
+/* ---- Reset básico ---- */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
+  background:var(--bg);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* Helpers */
-.container{max-width:1100px; margin:0 auto; padding:0 16px}
-h1,h2,h3{letter-spacing:.2px; margin:0 0 10px}
-p{margin:8px 0; color:var(--muted); line-height:1.6}
+img{max-width:100%;height:auto;display:block}
 
-/* Reveal animation */
-.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
-.reveal.show{opacity:1; transform:none}
+/* ---- Layout ---- */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+main{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* HERO */
+/* ---- HERO (degradado azul + spotlight blanco en el centro) ---- */
 .hero{
-  margin:28px auto 18px;
-  padding:58px 20px 36px;
+  position:relative;
+  margin: 28px auto 18px;
+  padding: 84px 20px 60px;
   text-align:center;
-  border-radius:18px;
-  background: radial-gradient(1200px 700px at 50% -260px, #e7f0ff 0%, #f7f9ff 55%);
-  border:1px solid var(--border);
+  border-radius: 24px;
+  color:#fff;
+  background:
+    radial-gradient( at 50% 18%, rgba(255,255,255,.85) 0%, rgba(255,255,255,0) 42%),
+    linear-gradient(180deg, var(--primary-50) 0%, var(--primary-400) 52%, #0052cc 100%);
+  overflow:hidden;
   box-shadow: var(--shadow);
 }
-.hero-logo{width:120px; height:auto; filter: drop-shadow(0 6px 12px rgba(0,0,0,.08))}
-.hero h1{font-size:44px; font-weight:900}
-.subtitle{font-size:18px; color:var(--muted); margin-bottom:12px}
 
-.actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:14px 0}
+/* logo centrado y visible */
+.hero .hero-logo,
+.hero img{
+  width:140px;            /* ajusta aquí si quieres más/menos grande */
+  margin: 0 auto 18px;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,.15));
+}
+
+/* Títulos y subtítulo */
+.hero h1{
+  margin: 8px 0 6px;
+  font-size: 46px;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing:.3px;
+  color:#fff;
+}
+.hero .subtitle{
+  font-size: 22px;
+  opacity:.95;
+  margin: 0 0 18px;
+  color:#eef6ff;
+}
+
+/* Botonera */
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:18px 0 8px}
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:8px; padding:12px 18px; border-radius:12px;
-  text-decoration:none; font-weight:800; letter-spacing:.2px;
-  border:1px solid var(--border); color:var(--ink); background:#fff;
-  box-shadow: var(--shadow);
-  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+  appearance:none;border:0;cursor:pointer;user-select:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding: 12px 26px;border-radius:12px;font-weight:800;font-size:16px;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease, border-color .2s ease, color .2s ease;
 }
-.btn:hover{transform:translateY(-1px); border-color:var(--ring)}
-.btn-primary{
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  color:#fff; border-color:transparent;
-}
-.btn-ghost{background:#fff}
 
+/* — Ambos botones comparten el mismo estilo azul — */
+.btn-primary,
+.btn-ghost{ /* mantenemos clases por compatibilidad pero quedan iguales */
+  background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+  color:#fff;
+  box-shadow: 0 10px 22px rgba(30,115,255,.28);
+}
+.btn-primary:hover,
+.btn-ghost:hover{ background: linear-gradient(180deg, var(--primary-700), var(--primary-800)); transform: translateY(-1px) }
+.btn-primary:active,
+.btn-ghost:active{ transform: translateY(0) }
+
+/* Bullets bajo el hero */
 .hero-bullets{
-  list-style:none; padding:0; margin:12px 0 0;
-  display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
-  color:#3b4a66;
+  margin:16px auto 0; padding:0; list-style:none;
+  display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
+  color:#eaf3ff; font-size:17px;
 }
-.hero-bullets li::before{content:"• "; opacity:.6}
+.hero-bullets li::before{content:"•"; margin-right:10px; opacity:.7}
 
-/* GRID / CARDS */
-.grid{
-  display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  max-width:1100px; margin:10px auto;
-}
+/* ---- Cards y grid ---- */
 .card{
-  background:var(--panel);
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:16px;
+  padding:22px 20px;
+  margin: 16px auto;
   box-shadow: var(--shadow);
-  padding:22px;
 }
-.card h2{color:#0f1a2e; font-size:26px}
-.card h3{color:#0f1a2e; font-size:20px}
+h2{font-size:28px; margin: 0 0 10px}
+h3{font-size:20px; margin: 0 0 6px}
+p{color:#3a4a64; line-height:1.65; margin:0}
 
-/* Tokenomics list */
-.tokenomics{
-  list-style:none; padding:0; margin:8px 0 0;
-  display:grid; gap:10px;
+/* Grid de características */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+  margin: 10px 0 6px;
 }
-.tokenomics li{
-  display:grid; grid-template-columns:1.2fr 1fr; gap:12px;
-  background:var(--soft); border:1px solid var(--border);
-  padding:10px 12px; border-radius:10px;
-}
-.tokenomics .label{color:#4b5e7e; font-weight:600}
-.tokenomics .value{justify-self:end; font-weight:800; color:#0e1a33}
-.note{font-size:12px; color:#7a8cab; margin-top:10px}
+@media (max-width:900px){ .grid{ grid-template-columns:1fr } }
+
+/* Tokenomics */
+.tokenomics{list-style:none;padding:0;margin:0}
+.tokenomics li{padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:#fbfdff}
 
 /* Roadmap */
-.roadmap{margin:0; padding-left:18px; color:#2a3958}
-.roadmap li{margin:8px 0}
-.roadmap li.done{color:#14a04a; font-weight:700}
-.roadmap li.done::marker{content:"✔️ "}
+.roadmap{padding-left:18px;margin:0}
+.roadmap .done{opacity:.75;text-decoration:line-through}
 
 /* FAQ */
-#faq details{
-  background:#fff; border:1px solid var(--border); border-radius:12px;
-  padding:12px 14px; margin:10px 0;
-  transition: border-color .2s ease, background .2s ease;
-}
-#faq details:hover{border-color:var(--ring); background:#fbfdff}
-#faq summary{cursor:pointer; font-weight:800; color:#0e1a33}
-#faq p{color:var(--muted)}
+details{border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fbfdff}
+summary{cursor:pointer;font-weight:700;color:var(--ink)}
 
-/* Social pills */
-.socials{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:10px}
-.pill{
-  width:44px; height:44px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center;
-  background: radial-gradient(circle at 30% 30%, #eaf1ff, #dfe8ff);
-  border:1px solid var(--border);
-  box-shadow: var(--shadow);
-  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
-  color:#0a1220;
-}
-.pill:hover{transform:translateY(-2px); border-color:var(--ring)}
-.pill i{font-size:20px}
-.pill[aria-label="X"] i{color:#000}
-.pill[aria-label="Telegram"] i{color:#229ED9}
-.pill[aria-label="Facebook"] i{color:#1877F2}
-.pill[aria-label="Email"] i{color:#d44638}
+/* Comunidad */
+.community-icons{display:flex;gap:14px;margin-top:12px}
+.community-icons a{font-size:22px;color:var(--primary-700);text-decoration:none}
+.community-icons a:hover{color:var(--primary-800)}
 
 /* Footer */
 .site-footer{
-  margin:34px auto 20px; padding:18px 16px;
-  border-top:1px solid var(--border); text-align:center;
+  max-width:1100px;margin:26px auto 34px;padding:18px 20px;text-align:center;
+  color:#70809b
 }
-.site-footer p{color:#6b7c97}
-.footer-links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:8px}
-.footer-links a{color:#37507c; text-decoration:none; font-weight:600}
-.footer-links a:hover{text-decoration:underline}
-
-.subscribe{
-  display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:8px 0 6px;
-}
+.subscribe{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
 .subscribe input{
-  background:#fff; border:1px solid var(--border); color:#0a1220;
-  padding:10px 12px; border-radius:10px; min-width:240px; outline:none;
+  padding:10px 14px;border-radius:10px;border:1px solid var(--border);min-width:240px
 }
-.subscribe input:focus{border-color:var(--ring)}
-.subscribe .btn{padding:10px 14px}
+.subscribe .btn-primary{padding:10px 18px}
+.footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.footer-links a{color:#51607a;text-decoration:none}
+.footer-links a:hover{color:var(--primary-700)}
 
-/* Responsive */
-@media (max-width:700px){
-  .hero h1{font-size:36px}
-  .tokenomics li{grid-template-columns:1fr 1fr}
-}
+/* ---- Reveal on scroll ---- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;will-change:opacity,transform}
+.reveal.show{opacity:1;transform:none}
