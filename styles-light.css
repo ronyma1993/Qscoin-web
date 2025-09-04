@@ -1,0 +1,161 @@
+/* ========== QSCOIN LIGHT THEME ========== */
+
+/* Tokens */
+:root{
+  --bg:#ffffff;
+  --ink:#0a1220;            /* texto principal */
+  --muted:#5b6b83;          /* texto secundario */
+  --panel:#ffffff;          /* tarjetas */
+  --border:#dfe8ff;         /* borde azulado sutil */
+  --soft:#f6f9ff;           /* fondo suave para secciones */
+  --primary:#196cff;        /* azul eléctrico */
+  --primary-2:#8a5bff;      /* violeta sutil */
+  --ring:#bcd2ff;           /* resalto */
+  --shadow:0 12px 30px rgba(45,75,140,.10);
+}
+
+/* Reset básico */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Helpers */
+.container{max-width:1100px; margin:0 auto; padding:0 16px}
+h1,h2,h3{letter-spacing:.2px; margin:0 0 10px}
+p{margin:8px 0; color:var(--muted); line-height:1.6}
+
+/* Reveal animation */
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+.reveal.show{opacity:1; transform:none}
+
+/* HERO */
+.hero{
+  margin:28px auto 18px;
+  padding:58px 20px 36px;
+  text-align:center;
+  border-radius:18px;
+  background: radial-gradient(1200px 700px at 50% -260px, #e7f0ff 0%, #f7f9ff 55%);
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.hero-logo{width:120px; height:auto; filter: drop-shadow(0 6px 12px rgba(0,0,0,.08))}
+.hero h1{font-size:44px; font-weight:900}
+.subtitle{font-size:18px; color:var(--muted); margin-bottom:12px}
+
+.actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:14px 0}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 18px; border-radius:12px;
+  text-decoration:none; font-weight:800; letter-spacing:.2px;
+  border:1px solid var(--border); color:var(--ink); background:#fff;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.btn:hover{transform:translateY(-1px); border-color:var(--ring)}
+.btn-primary{
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color:#fff; border-color:transparent;
+}
+.btn-ghost{background:#fff}
+
+.hero-bullets{
+  list-style:none; padding:0; margin:12px 0 0;
+  display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
+  color:#3b4a66;
+}
+.hero-bullets li::before{content:"• "; opacity:.6}
+
+/* GRID / CARDS */
+.grid{
+  display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  max-width:1100px; margin:10px auto;
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  padding:22px;
+}
+.card h2{color:#0f1a2e; font-size:26px}
+.card h3{color:#0f1a2e; font-size:20px}
+
+/* Tokenomics list */
+.tokenomics{
+  list-style:none; padding:0; margin:8px 0 0;
+  display:grid; gap:10px;
+}
+.tokenomics li{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:12px;
+  background:var(--soft); border:1px solid var(--border);
+  padding:10px 12px; border-radius:10px;
+}
+.tokenomics .label{color:#4b5e7e; font-weight:600}
+.tokenomics .value{justify-self:end; font-weight:800; color:#0e1a33}
+.note{font-size:12px; color:#7a8cab; margin-top:10px}
+
+/* Roadmap */
+.roadmap{margin:0; padding-left:18px; color:#2a3958}
+.roadmap li{margin:8px 0}
+.roadmap li.done{color:#14a04a; font-weight:700}
+.roadmap li.done::marker{content:"✔️ "}
+
+/* FAQ */
+#faq details{
+  background:#fff; border:1px solid var(--border); border-radius:12px;
+  padding:12px 14px; margin:10px 0;
+  transition: border-color .2s ease, background .2s ease;
+}
+#faq details:hover{border-color:var(--ring); background:#fbfdff}
+#faq summary{cursor:pointer; font-weight:800; color:#0e1a33}
+#faq p{color:var(--muted)}
+
+/* Social pills */
+.socials{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:10px}
+.pill{
+  width:44px; height:44px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center;
+  background: radial-gradient(circle at 30% 30%, #eaf1ff, #dfe8ff);
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+  color:#0a1220;
+}
+.pill:hover{transform:translateY(-2px); border-color:var(--ring)}
+.pill i{font-size:20px}
+.pill[aria-label="X"] i{color:#000}
+.pill[aria-label="Telegram"] i{color:#229ED9}
+.pill[aria-label="Facebook"] i{color:#1877F2}
+.pill[aria-label="Email"] i{color:#d44638}
+
+/* Footer */
+.site-footer{
+  margin:34px auto 20px; padding:18px 16px;
+  border-top:1px solid var(--border); text-align:center;
+}
+.site-footer p{color:#6b7c97}
+.footer-links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:8px}
+.footer-links a{color:#37507c; text-decoration:none; font-weight:600}
+.footer-links a:hover{text-decoration:underline}
+
+.subscribe{
+  display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:8px 0 6px;
+}
+.subscribe input{
+  background:#fff; border:1px solid var(--border); color:#0a1220;
+  padding:10px 12px; border-radius:10px; min-width:240px; outline:none;
+}
+.subscribe input:focus{border-color:var(--ring)}
+.subscribe .btn{padding:10px 14px}
+
+/* Responsive */
+@media (max-width:700px){
+  .hero h1{font-size:36px}
+  .tokenomics li{grid-template-columns:1fr 1fr}
+}
