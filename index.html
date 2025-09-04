@@ -1,28 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>QSCOIN | Quantum-Safe Coin</title>
   <meta name="description" content="QSCOIN is a next-generation, quantum-safe cryptocurrency using post-quantum cryptography (PQC)."/>
-  <meta name="theme-color" content="#ffffff"/>
+  <meta name="theme-color" content="#0b1220"/>
   <link rel="canonical" href="https://qscoin.org/"/>
 
-  <!-- Icons -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-  <link rel="apple-touch-icon" href="logo.png"/>
+  <!-- Mantén tu CSS actual -->
+  <link rel="stylesheet" href="styles.css?v=11"/>
 
-  <!-- Font Awesome (social icons) -->
+  <!-- Iconos -->
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="logo.png"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-  <!-- Styles (cache-bust with v=1) -->
-  <link rel="stylesheet" href="styles-light.css?v=1"/>
+  <!-- Overrides SOLO para el header con color -->
+  <style>
+    /* Fondo general blanco limpio (por si tu CSS lo tenía oscuro) */
+    body { background:#ffffff; color:#0f172a; }
+
+    /* Hero con degradado (solo arriba) */
+    .hero.hero-gradient{
+      margin: 28px auto;
+      padding: 56px 20px;
+      text-align: center;
+      border-radius: 20px;
+      background: linear-gradient(135deg,#4F7CFF 0%,#8A4DFF 100%);
+      background-size: 200% 200%;
+      animation: qsgshift 16s ease infinite;
+      color: #fff;
+      box-shadow: 0 18px 50px rgba(34,56,115,.25);
+      border: none;
+    }
+    @keyframes qsgshift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .hero.hero-gradient .hero-logo{
+      width:96px; height:auto;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,.35));
+    }
+    .hero.hero-gradient h1{ color:#fff; }
+    .hero.hero-gradient .subtitle{ color: rgba(255,255,255,.9); }
+
+    /* Botones en el header para que destaquen sobre el color */
+    .hero.hero-gradient .btn{ border-radius:12px; font-weight:800; }
+    .hero.hero-gradient .btn-primary{
+      background:#ffffff; color:#0b1220; border:1px solid rgba(255,255,255,.4);
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+    .hero.hero-gradient .btn-ghost{
+      background: rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.35);
+      color:#fff;
+      backdrop-filter: blur(6px);
+    }
+    .hero.hero-gradient .btn:hover{ transform: translateY(-1px); }
+
+    /* Puntos bajo el hero en blanco */
+    .hero.hero-gradient .hero-bullets{ color: rgba(255,255,255,.95); }
+    .hero.hero-gradient .hero-bullets li::before{ opacity:.7 }
+
+    /* Tarjetas del resto del sitio sobre fondo blanco */
+    .card{ background:#ffffff; border:1px solid rgba(15,23,42,.08); box-shadow: 0 10px 30px rgba(15,23,42,.06); }
+    h2{ color:#0f172a; }
+    .tokenomics li strong{ color:#0f172a; }
+    .site-footer{ background:#ffffff; border-top:1px solid rgba(15,23,42,.08); }
+  </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero reveal">
-    <img class="hero-logo" src="logo.png" alt="QSCOIN logo" width="120" height="120"/>
+  <!-- HERO con degradado -->
+  <section class="hero hero-gradient reveal">
+    <img class="hero-logo" src="logo.png" alt="QSCOIN logo" width="96" height="96"/>
     <h1>QSCOIN</h1>
     <p class="subtitle">Quantum-Safe Cryptocurrency</p>
 
@@ -36,44 +89,43 @@
       <li>Post-quantum cryptography</li>
       <li>Open development</li>
     </ul>
-  </header>
+  </section>
 
   <main class="container">
-    <!-- ABOUT -->
-    <section class="grid">
-      <article class="card reveal">
-        <h2>What is QSCOIN?</h2>
-        <p>
-          QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum
-          computers. We use post-quantum cryptography (PQC) to protect keys, transactions and wallets
-          against quantum attacks, keeping your assets safe for the long term.
-        </p>
-      </article>
+    <!-- WHAT IS -->
+    <section class="card reveal">
+      <h2>What is QSCOIN?</h2>
+      <p>
+        QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers.
+        We use post-quantum cryptography (PQC) to protect keys, transactions and wallets against quantum attacks,
+        keeping your assets safe for the long term.
+      </p>
+    </section>
 
-      <article class="card reveal">
+    <!-- FEATURES -->
+    <section class="grid">
+      <div class="card reveal">
         <h3>🔒 Quantum-Safe</h3>
         <p>Hybrid signature schemes (PQC + classical) to ensure security today and tomorrow.</p>
-      </article>
-
-      <article class="card reveal">
+      </div>
+      <div class="card reveal">
         <h3>⚡ Fast & Scalable</h3>
-        <p>Low fees and fast confirmations without sacrificing security.</p>
-      </article>
-
-      <article class="card reveal">
+        <p>Lean design targeting low fees and fast confirmations without sacrificing security.</p>
+      </div>
+      <div class="card reveal">
         <h3>🌐 Community-Driven</h3>
         <p>Transparent roadmap, open development and inclusive governance over time.</p>
-      </article>
+      </div>
     </section>
 
     <!-- TOKENOMICS -->
     <section class="card reveal">
       <h2>Tokenomics</h2>
       <ul class="tokenomics">
-        <li><span class="label">Ticker</span><span class="value">QSC</span></li>
-        <li><span class="label">Supply (planned)</span><span class="value">TBD</span></li>
-        <li><span class="label">Consensus (R&amp;D)</span><span class="value">Hybrid + PQC</span></li>
-        <li><span class="label">Allocation (draft)</span><span class="value">Community-first</span></li>
+        <li><strong>Ticker:</strong> QSC</li>
+        <li><strong>Supply (planned):</strong> TBD</li>
+        <li><strong>Consensus (R&amp;D):</strong> Hybrid + PQC</li>
+        <li><strong>Allocation (draft):</strong> Community-first</li>
       </ul>
       <p class="note">* Figures above are work-in-progress and subject to community review.</p>
     </section>
@@ -119,19 +171,11 @@
       <h2>Join the community</h2>
       <p>Be part of the quantum-safe future. Follow updates and join the discussion:</p>
 
-      <div class="socials">
-        <a class="pill" href="https://x.com/QSCoin_official?s=09" target="_blank" rel="noopener" aria-label="X">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-        <a class="pill" href="https://t.me/qscoin" target="_blank" rel="noopener" aria-label="Telegram">
-          <i class="fab fa-telegram"></i>
-        </a>
-        <a class="pill" href="https://www.facebook.com/share/1BDZM5HN4o/" target="_blank" rel="noopener" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="pill" href="mailto:qscoin.1@gamil.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+      <div class="community-icons">
+        <a href="https://x.com/QSCoin_official?s=09" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://t.me/qscoin" target="_blank" rel="noopener noreferrer" aria-label="Join us on Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.facebook.com/share/1BDZM5HN4o/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:qscoin.1@gamil.com" aria-label="Send us an email"><i class="fas fa-envelope"></i></a>
       </div>
     </section>
   </main>
@@ -139,36 +183,31 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>© <span id="year"></span> QSCOIN — All rights reserved</p>
-
     <form class="subscribe" action="https://formspree.io/f/your-id" method="POST">
       <label for="email" class="sr-only">Email</label>
-      <input id="email" type="email" name="email" placeholder="Subscribe for updates" required />
+      <input id="email" type="email" name="email" placeholder="Subscribe for updates" required/>
       <button type="submit" class="btn btn-primary">Subscribe</button>
     </form>
-
-    <nav class="footer-links">
+    <div class="footer-links">
       <a href="whitepaper.pdf" target="_blank" rel="noopener">Litepaper</a>
       <a href="#faq">FAQ</a>
       <a href="https://t.me/qscoin" target="_blank" rel="noopener">Telegram</a>
       <a href="https://discord.gg/your-invite" target="_blank" rel="noopener">Discord</a>
-    </nav>
+    </div>
   </footer>
 
   <script>
-    // Year
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Reveal on scroll
     const els = document.querySelectorAll('.reveal');
     const onScroll = () => {
       const trigger = window.innerHeight * 0.88;
-      els.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < trigger) el.classList.add('show');
-      });
+      els.forEach(el => { if (el.getBoundingClientRect().top < trigger) el.classList.add('show'); });
     };
     onScroll();
-    document.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, {passive:true});
   </script>
 </body>
 </html>
