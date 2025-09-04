@@ -3,72 +3,25 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Quantum-Safe Coin</title>
+  <title>QSCOIN | Quantum-Safe Coin</title>
   <meta name="description" content="QSCOIN is a next-generation, quantum-safe cryptocurrency using post-quantum cryptography (PQC)."/>
   <meta name="theme-color" content="#0b1220"/>
   <link rel="canonical" href="https://qscoin.org/"/>
 
-  <!-- CSS principal (tema claro) -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles-light.css?v=12"/>
 
   <!-- Iconos -->
   <link rel="icon" href="favicon.ico"/>
   <link rel="apple-touch-icon" href="logo.png"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-  <!-- Overrides mínimos para hero degradado + botones -->
-  <style>
-
-    body { background:#ffffff; color:#0f172a; }
-
-    .hero.hero-gradient{
-      margin:28px auto;
-      padding:56px 20px;
-      text-align:center;
-      border-radius:20px;
-      background:linear-gradient(135deg,#4F7CFF 0%,#8A4DFF 100%);
-      background-size:200% 200%;
-      animation:qsgshift 16s ease infinite;
-      color:#fff;
-      box-shadow:0 18px 50px rgba(34,56,115,.25);
-      border:none;
-    }
-    @keyframes qsgshift{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-    .hero.hero-gradient .hero-logo{width:96px;height:auto;filter:drop-shadow(0 10px 22px rgba(0,0,0,.35))}
-    .hero.hero-gradient h1{color:#fff}
-    .hero.hero-gradient .subtitle{color:rgba(255,255,255,.9)}
-
-    .hero.hero-gradient .btn{border-radius:12px;font-weight:800}
-    .hero.hero-gradient .btn-primary{
-      background:#fff;color:#0b1220;border:1px solid rgba(255,255,255,.4);
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-    }
-    .hero.hero-gradient .btn-ghost{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.35);
-      color:#fff;backdrop-filter:blur(6px);
-    }
-    .hero.hero-gradient .btn:hover{transform:translateY(-1px)}
-
-    .hero.hero-gradient .hero-bullets{color:rgba(255,255,255,.95)}
-    .hero.hero-gradient .hero-bullets li::before{opacity:.7}
-
-    .card{background:#fff;border:1px solid rgba(15,23,42,.08);box-shadow:0 10px 30px rgba(15,23,42,.06)}
-    h2{color:#0f172a}
-    .tokenomics li strong{color:#0f172a}
-    .site-footer{background:#fff;border-top:1px solid rgba(15,23,42,.08)}
-  </style>
 </head>
 <body>
 
   <!-- HERO -->
-  <section class="hero hero-gradient reveal">
-    <img class="hero-logo" src="logo.png" alt="QSCOIN logo" width="96" height="96"/>
-
+  <section class="hero reveal">
+    <img class="hero-logo" src="logo.png" alt="QSCOIN logo"/>
+    <h1>QSCOIN</h1>
     <p class="subtitle">Quantum-Safe Cryptocurrency</p>
 
     <div class="actions">
@@ -192,17 +145,14 @@
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Reveal on scroll
+    // Animación reveal
     const els = document.querySelectorAll('.reveal');
     const onScroll = () => {
       const trigger = window.innerHeight * 0.88;
-      els.forEach(el => {
-        if (el.getBoundingClientRect().top < trigger) el.classList.add('show');
-      });
+      els.forEach(el => { if (el.getBoundingClientRect().top < trigger) el.classList.add('show'); });
     };
     onScroll();
-    document.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, {passive:true});
   </script>
 </body>
 </html>
-```0
