@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Básico -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QSCOIN | Quantum-Safe Coin</title>
   <meta name="description" content="QSCOIN is a next-generation, quantum-safe cryptocurrency built with post-quantum cryptography (PQC) to protect your assets against future quantum attacks." />
   <link rel="canonical" href="https://qscoin.org/" />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b1220" />
+  <meta name="theme-color" content="#0a0f1c" />
   <meta name="color-scheme" content="dark light" />
 
-  <!-- Iconos -->
+  <!-- Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
-  <meta name="msapplication-TileColor" content="#0b1220" />
+  <meta name="msapplication-TileColor" content="#0a0f1c" />
 
-  <!-- CSS (bump de versión para evitar caché) -->
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <!-- CSS (cache-bust) -->
+  <link rel="stylesheet" href="styles.css?v=5" />
 
-  <!-- Font Awesome (iconos sociales) -->
+  <!-- Font Awesome (social icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Open Graph (Facebook/LinkedIn/Discord) -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="QSCOIN | Quantum-Safe Coin" />
   <meta property="og:description" content="Quantum-safe cryptocurrency secured with post-quantum cryptography." />
   <meta property="og:url" content="https://qscoin.org/" />
-  <!-- Si tienes una imagen 1200x630 súbela como og-image.png y cambia abajo -->
   <meta property="og:image" content="https://qscoin.org/logo.png" />
   <meta property="og:site_name" content="QSCOIN" />
 
-  <!-- Twitter Cards -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="QSCOIN | Quantum-Safe Coin" />
   <meta name="twitter:description" content="Quantum-safe cryptocurrency secured with post-quantum cryptography." />
   <meta name="twitter:image" content="https://qscoin.org/logo.png" />
-  <!-- Si tienes @ en X, descomenta y ponlo -->
-  <!-- <meta name="twitter:site" content="@qscoin" /> -->
+  <!-- <meta name="twitter:site" content="@QSCoin_official"> -->
 
-  <!-- JSON-LD (Organization) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,27 +46,24 @@
     "url": "https://qscoin.org/",
     "logo": "https://qscoin.org/logo.png",
     "sameAs": [
-      "https://x.com/qscoin",
+      "https://x.com/QSCoin_official",
       "https://t.me/qscoin",
-      "https://facebook.com/qscoin"
+      "https://www.facebook.com/share/1BDZM5HN4o/"
     ]
   }
   </script>
 </head>
+
 <body>
   <!-- HERO -->
-  <section class="hero">
-    <img class="logo" src="logo.png" alt="QSCOIN logo" width="96" height="96"/>
+  <section class="hero reveal">
+    <img class="hero-logo" src="logo.png" alt="QSCOIN logo" width="96" height="96" />
     <h1>QSCOIN</h1>
     <p class="subtitle">The Quantum-Safe Cryptocurrency</p>
 
-    <div class="cta-row">
-      <a class="btn btn-primary" href="whitepaper.pdf" target="_blank" rel="noopener">
-        📄 Download Whitepaper
-      </a>
-      <a class="btn btn-dark" href="https://t.me/qscoin" target="_blank" rel="noopener">
-        💬 Join Community
-      </a>
+    <div class="actions">
+      <a class="btn primary" href="whitepaper.pdf" target="_blank" rel="noopener">📄 Download Whitepaper</a>
+      <a class="btn" href="https://t.me/qscoin" target="_blank" rel="noopener">💬 Join Community</a>
     </div>
 
     <ul class="hero-bullets">
@@ -78,9 +73,9 @@
     </ul>
   </section>
 
-  <main class="container">
+  <main>
     <!-- WHAT IS -->
-    <section class="card">
+    <section class="card reveal">
       <h2>What is QSCOIN?</h2>
       <p>
         QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers.
@@ -90,7 +85,7 @@
     </section>
 
     <!-- FEATURES -->
-    <section class="grid">
+    <section class="grid reveal">
       <div class="card">
         <h3>🔒 Quantum-Safe</h3>
         <p>Hybrid signature schemes (PQC + classical) to ensure security today and tomorrow.</p>
@@ -106,23 +101,22 @@
     </section>
 
     <!-- TOKENOMICS -->
-    
-<section class="card">
-  <h2>Tokenomics</h2>
-  <ul class="tokenomics">
-    <li><strong>Ticker:</strong> QSC</li>
-    <li><strong>Supply (planned):</strong> TBD</li>
-    <li><strong>Consensus (R&D):</strong> Hybrid + PQC</li>
-    <li><strong>Allocation (draft):</strong> Community-first</li>
-  </ul>
-  <p class="note">* Figures above are work-in-progress and subject to community review.</p>
-</section>
+    <section class="card reveal">
+      <h2>Tokenomics</h2>
+      <ul class="tokenomics">
+        <li><strong>Ticker:</strong> QSC</li>
+        <li><strong>Supply (planned):</strong> TBD</li>
+        <li><strong>Consensus (R&D):</strong> Hybrid + PQC</li>
+        <li><strong>Allocation (draft):</strong> Community-first</li>
+      </ul>
+      <p class="note">* Figures above are work-in-progress and subject to community review.</p>
+    </section>
 
     <!-- ROADMAP -->
-    <section class="card">
+    <section class="card reveal">
       <h2>Roadmap</h2>
-      <ol class="roadmap">
-        <li>Phase 1 – Launch website & litepaper ✅</li>
+      <ol class="timeline">
+        <li class="done">Phase 1 – Launch website & litepaper</li>
         <li>Phase 2 – Community growth & partnerships</li>
         <li>Phase 3 – Listing & wallet integrations</li>
         <li>Phase 4 – Global adoption & ecosystem</li>
@@ -130,7 +124,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="card" id="faq">
+    <section class="card faq reveal" id="faq">
       <h2>FAQ</h2>
 
       <details>
@@ -145,7 +139,7 @@
 
       <details>
         <summary>How can I participate?</summary>
-        <p>in the community, contribute to the code/feedback, and help with outreach and translations.</p>
+        <p>Join the community, contribute to the code/feedback, and help with outreach and translations.</p>
       </details>
 
       <details>
@@ -159,51 +153,60 @@
       </details>
     </section>
 
-<!-- JOIN THE COMMUNITY -->
-<section class="card">
-  <h2>Join the Community</h2>
-  <p>Be part of the quantum-safe future. Follow updates and join the discussion:</p>
+    <!-- JOIN THE COMMUNITY -->
+    <section class="card reveal">
+      <h2>Join the Community</h2>
+      <p>Be part of the quantum-safe future. Follow updates and join the discussion:</p>
 
-  <div class="community-icons">
-    <a href="https://x.com/QSCoin_official?s=09" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
-      <i class="fab fa-x-twitter"></i>
-    </a>
-    <a href="https://t.me/qscoin" target="_blank" rel="noopener noreferrer" aria-label="Join us on Telegram">
-      <i class="fab fa-telegram"></i>
-    </a>
-    <a href="https://www.facebook.com/share/1BDZM5HN4o/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="mailto:qscoin.1@gamil.com" aria-label="Send us an email">
-      <i class="fas fa-envelope"></i>
-    </a>
-  </div>
-</section>
-  
+      <div class="community-icons">
+        <a href="https://x.com/QSCoin_official?s=09" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://t.me/qscoin" target="_blank" rel="noopener noreferrer" aria-label="Join us on Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1BDZM5HN4o/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:qscoin.1@gamil.com" aria-label="Send us an email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- SINGLE FOOTER -->
-  <footer class="site-footer">
-    
-      <p>© <span id="year"></span> QSCOIN — All rights reserved</p>
-
-      <form class="subscribe" action="https://formspree.io/f/your-id" method="POST">
-        <label for="email" class="sr-only">Email</label>
-        <input id="email" type="email" name="email" placeholder="Subscribe for updates" required />
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-
-      <div class="footer-links">
-        <a href="whitepaper.pdf" target="_blank" rel="noopener">Litepaper</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://t.me/qscoin" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://discord.gg/your-invite" target="_blank" rel="noopener">Discord</a>
-      </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> QSCOIN — All rights reserved</p>
+    <form class="subscribe" action="https://formspree.io/f/your-id" method="POST">
+      <label for="email" class="sr-only">Email</label>
+      <input id="email" type="email" name="email" placeholder="Subscribe for updates" required />
+      <button type="submit" class="btn primary">Subscribe</button>
+    </form>
+    <div class="footer-links">
+      <a href="whitepaper.pdf" target="_blank" rel="noopener">Litepaper</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://t.me/qscoin" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://discord.gg/your-invite" target="_blank" rel="noopener">Discord</a>
     </div>
   </footer>
 
+  <!-- Year + reveal on scroll -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('show');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(el => io.observe(el));
+    });
   </script>
 </body>
 </html>
