@@ -1,238 +1,130 @@
 /* =======================
-   QSCOIN — LIGHT FUTURISTIC THEME
+   QSCOIN — LIGHT THEME
    ======================= */
 
-/* ---- Tokens ---- */
 :root{
-  --bg: #f6f9ff;          /* fondo general muy claro */
-  --ink: #0f172a;         /* texto principal (azul gris oscuro) */
-  --muted: #475569;       /* texto secundario */
-  --primary-50:#e6f2ff;
-  --primary-200:#b7d2ff;
-  --primary-400:#66a6ff;  /* azul medio */
-  --primary-600:#1e73ff;  /* azul vivo */
-  --primary-700:#0d57e6;  /* hover */
-  --primary-800:#003d99;  /* active */
-  --card:#ffffff;
-  --border:#e6eef9;
-  --shadow: 0 10px 25px rgba(15,23,42,.08);
+  --bg: #f6f8fc;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #495a75;
+  --border: rgba(15,23,42,.10);
+  --shadow: 0 24px 60px rgba(15,23,42,.08);
+
+  /* Azul neutro (sin púrpura) */
+  --hero-start: #eaf2ff;   /* centro muy claro */
+  --hero-mid:   #bcd0ff;
+  --hero-end:   #6a8dff;   /* borde inferior */
+  --accent: #5b7dff;
 }
 
-/* ---- Reset básico ---- */
-*{box-sizing:border-box}
-html,body{height:100%}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ height:100%; }
 body{
-  margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-img{max-width:100%;height:auto;display:block}
+.container, main{ max-width:1100px; margin:0 auto; padding:0 16px; }
+h1,h2,h3{ letter-spacing:.2px; }
+p{ line-height:1.6; color:#2b3850; }
 
-/* ---- Layout ---- */
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-main{max-width:1100px;margin:0 auto;padding:0 20px}
+/* ---------- Reveal ---------- */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.show{ opacity:1; transform:none; }
 
-/* ---- HERO (degradado azul + spotlight blanco en el centro) ---- */
+/* ---------- Hero ---------- */
 .hero{
   position:relative;
-  margin: 28px auto 18px;
-  padding: 84px 20px 60px;
+  margin: 28px auto;
+  padding: 56px 20px 40px;
   text-align:center;
-  border-radius: 24px;
-  color:#fff;
+  border-radius: 22px;
   background:
-    radial-gradient( at 50% 18%, rgba(255,255,255,.85) 0%, rgba(255,255,255,0) 42%),
-    linear-gradient(180deg, var(--primary-50) 0%, var(--primary-400) 52%, #0052cc 100%);
-  overflow:hidden;
-  box-shadow: var(--shadow);
-}
-
-/* logo centrado y visible */
-.hero .hero-logo,
-.hero img{
-  width:140px;            /* ajusta aquí si quieres más/menos grande */
-  margin: 0 auto 18px;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,.15));
-}
-
-/* Títulos y subtítulo */
-.hero h1{
-  margin: 8px 0 6px;
-  font-size: 46px;
-  line-height: 1.05;
-  font-weight: 900;
-  letter-spacing:.3px;
-  color:#fff;
-}
-.hero .subtitle{
-  font-size: 22px;
-  opacity:.95;
-  margin: 0 0 18px;
-  color:#eef6ff;
-}
-
-/* Botonera */
-.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:18px 0 8px}
-.btn{
-  appearance:none;border:0;cursor:pointer;user-select:none;
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding: 12px 26px;border-radius:12px;font-weight:800;font-size:16px;
-  transition: transform .12s ease, box-shadow .12s ease, background .2s ease, border-color .2s ease, color .2s ease;
-}
-
-/* — Ambos botones comparten el mismo estilo azul — */
-.btn-primary,
-.btn-ghost{ /* mantenemos clases por compatibilidad pero quedan iguales */
-  background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
-  color:#fff;
-  box-shadow: 0 10px 22px rgba(30,115,255,.28);
-}
-.btn-primary:hover,
-.btn-ghost:hover{ background: linear-gradient(180deg, var(--primary-700), var(--primary-800)); transform: translateY(-1px) }
-.btn-primary:active,
-.btn-ghost:active{ transform: translateY(0) }
-
-/* Bullets bajo el hero */
-.hero-bullets{
-  margin:16px auto 0; padding:0; list-style:none;
-  display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
-  color:#eaf3ff; font-size:17px;
-}
-.hero-bullets li::before{content:"•"; margin-right:10px; opacity:.7}
-
-/* ---- Cards y grid ---- */
-.card{
-  background:var(--card);
+    radial-gradient(1200px 420px at 50% 18%, rgba(255,255,255,.60), transparent 62%),
+    linear-gradient(180deg, var(--hero-start) 0%, var(--hero-mid) 45%, var(--hero-end) 100%);
   border:1px solid var(--border);
-  border-radius:16px;
-  padding:22px 20px;
-  margin: 16px auto;
   box-shadow: var(--shadow);
-}
-h2{font-size:28px; margin: 0 0 10px}
-h3{font-size:20px; margin: 0 0 6px}
-p{color:#3a4a64; line-height:1.65; margin:0}
-
-/* Grid de características */
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:16px;
-  margin: 10px 0 6px;
-}
-@media (max-width:900px){ .grid{ grid-template-columns:1fr } }
-
-/* Tokenomics */
-.tokenomics{list-style:none;padding:0;margin:0}
-.tokenomics li{padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:#fbfdff}
-
-/* Roadmap */
-.roadmap{padding-left:18px;margin:0}
-.roadmap .done{opacity:.75;text-decoration:line-through}
-
-/* FAQ */
-details{border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fbfdff}
-summary{cursor:pointer;font-weight:700;color:var(--ink)}
-
-/* Comunidad */
-.community-icons{display:flex;gap:14px;margin-top:12px}
-.community-icons a{font-size:22px;color:var(--primary-700);text-decoration:none}
-.community-icons a:hover{color:var(--primary-800)}
-
-/* Footer */
-.site-footer{
-  max-width:1100px;margin:26px auto 34px;padding:18px 20px;text-align:center;
-  color:#70809b
-}
-.subscribe{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
-.subscribe input{
-  padding:10px 14px;border-radius:10px;border:1px solid var(--border);min-width:240px
-}
-.subscribe .btn-primary{padding:10px 18px}
-.footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:6px}
-.footer-links a{color:#51607a;text-decoration:none}
-.footer-links a:hover{color:var(--primary-700)}
-
-/* ---- Reveal on scroll ---- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;will-change:opacity,transform}
-.reveal.show{opacity:1;transform:none}
-/* =========================
-   FIX hero gradient + logo
-   ========================= */
-
-/* Paleta del hero (azules neutros) */
-:root{
-  --hero-start: #eaf2ff;   /* muy claro al centro */
-  --hero-mid:   #8fb5ff;   /* azul claro */
-  --hero-end:   #4d7cff;   /* azul medio */
+  overflow:hidden;
 }
 
-/* Fuerza el degradado del hero y su glow suave */
-.hero{
-  /* asegura que no quede blanco */
-  background:
-    radial-gradient(1200px 400px at 50% 20%, rgba(255,255,255,.45), transparent 60%),
-    linear-gradient(180deg, var(--hero-start) 0%, var(--hero-mid) 45%, var(--hero-end) 100%) !important;
-  color:#0b1220;
-  border: 1px solid rgba(13, 27, 69, .10);
-  border-radius: 24px;
-  padding: 56px 20px;
-  box-shadow: 0 30px 80px rgba(28, 54, 122, .18);
-}
-
-/* Halo muy suave detrás del logo para que destaque */
-.hero::before{
-  content:"";
-  position:absolute;
-  left:50%; top:92px; transform:translateX(-50%);
-  width: 240px; height: 240px;
-  background: radial-gradient(closest-side, rgba(255,255,255,.55), rgba(255,255,255,0));
-  filter: blur(6px);
-  pointer-events:none;
-}
-
-/* Tamaño del logo (PNG transparente) */
 .hero-logo{
   display:block;
-  margin: 0 auto 14px;
-  width: clamp(120px, 18vw, 170px);   /* más grande en mobile */
+  margin: 0 auto 8px;
+  width: clamp(140px, 22vw, 220px);
   height:auto;
-  image-rendering: -webkit-optimize-contrast;
+  filter: drop-shadow(0 8px 22px rgba(31,65,140,.25));
 }
 
-/* Título centrado y legible sobre el azul */
-.hero h1{ 
-  font-size: clamp(28px, 6vw, 44px);
-  letter-spacing:.4px;
-  color:#0b172a;
-}
-
-/* Subtítulo */
+/* título eliminado; usamos solo subtítulo grande */
 .subtitle{
+  font-size: clamp(22px, 4.8vw, 30px);
+  margin-top: 6px;
   color: rgba(10,23,53,.85);
 }
 
-/* Botones iguales (ambos sólidos) */
-.actions{ gap: 12px; justify-content:center; flex-wrap:wrap; }
+/* pills debajo */
+.hero-bullets{
+  list-style:none;
+  display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
+  margin-top:18px; color: rgba(10,23,53,.9);
+}
+.hero-bullets li::before{ content:"• "; opacity:.55; }
+
+/* ---------- Buttons ---------- */
+.actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:18px 0 2px; }
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding: 12px 18px; border-radius: 14px; font-weight: 800;
-  border:1px solid rgba(12, 26, 64, .12);
-  box-shadow: 0 10px 26px rgba(24, 60, 128, .18);
+  padding:12px 18px; border-radius:14px; font-weight:800;
+  text-decoration:none; border:1px solid rgba(12,26,64,.12);
+  box-shadow: 0 10px 26px rgba(24,60,128,.18);
+  transition: transform .15s ease;
 }
-.btn-primary,
-.btn-ghost{
+.btn-primary{
   background: linear-gradient(135deg, #5a7bff, #6a88ff 60%, #7b93ff);
-  color:#fff !important;
+  color:#fff;
 }
 .btn:hover{ transform: translateY(-1px); }
 
-/* Píldoras bajo el hero un poco más oscuras para contraste */
-.hero-bullets{ color: rgba(10,23,53,.9); }
+/* ---------- Cards / Grid ---------- */
+.card{
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 14px 0;
+  box-shadow: var(--shadow);
+}
+.card h2{ font-size: 26px; margin-bottom: 8px; }
+.card h3{ font-size: 18px; margin-bottom: 6px; color:#0f172a; }
 
-/* Contiene posicionamiento del ::before del hero */
-.hero{ position: relative; overflow: hidden; }
+.grid{
+  display:grid; gap:14px; margin:14px 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+
+.tokenomics{ list-style:none; padding-left:0; }
+.tokenomics li{ padding:8px 12px; background:#f2f6ff; border:1px solid rgba(15,23,42,.08); border-radius:10px; margin:6px 0; }
+.tokenomics li strong{ color:#0f172a; }
+
+/* Roadmap */
+.roadmap{ padding-left:18px; }
+.roadmap .done{ text-decoration:line-through; opacity:.7; }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  text-align:center; padding:24px 16px; margin:26px 0 16px;
+  color:#3a4b6d;
+}
+.site-footer .subscribe{ margin:10px auto; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.site-footer input{
+  padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:#fff; min-width:240px;
+}
+.site-footer .footer-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:6px; }
+.site-footer a{ color:#314a9f; }
+
+/* ---------- Community icons ---------- */
+.community-icons{ display:flex; gap:12px; font-size:20px; }
+.community-icons a{ color:#3a57c7; }
