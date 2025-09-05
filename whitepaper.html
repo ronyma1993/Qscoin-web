@@ -10,87 +10,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JKXGE8BKX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-1JKXGE8BKX');
-  </script>
 </head>
 <body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i>🌙</i><span>Dark</span></button>
 
-  <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <i>🌙</i><span>Dark</span>
-  </button>
-
-  <div class="container wp-container">
-
-    <!-- HERO -->
-    <header class="wp-hero reveal show" id="hero">
-      <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo" />
-      <h1 class="hero-tagline">QSCOIN Whitepaper</h1>
-      <p class="wp-sub">Quantum-Safe • Hybrid PQC • zk Privacy • PoS + VRF • Max supply 81,000,000</p>
-
-      <div class="actions">
-        <a class="btn" href="index.html#top">← Back to Home</a>
-        <a class="btn" href="whitepaper.pdf" target="_blank" rel="noopener">Open PDF</a>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html"><img src="logo-transparent.png" alt="QSCOIN logo"><span>QSCOIN</span></a>
+      <div class="nav-cta">
+        <a class="btn alt" href="index.html#features">Features</a>
+        <a class="btn alt" href="index.html#roadmap">Roadmap</a>
         <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
       </div>
+    </div>
+  </nav>
 
-      <ul class="hero-bullets">
-        <li>Hybrid signatures (PQ + classical)</li>
-        <li>zk-Rollups + payment proofs</li>
-        <li>Account abstraction (AA)</li>
-        <li>Composable modular design</li>
-      </ul>
+  <main class="container wp-container" id="top">
+    <!-- HERO -->
+    <header class="hero wp-hero reveal show">
+      <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo" />
+      <h1 class="hero-tagline">QSCOIN Whitepaper</h1>
+      <p class="wp-sub">Quantum-Safe • Hybrid PQC • zk Privacy • PoS + VRF • 81,000,000 max supply</p>
+      <div class="btn-group" style="justify-content:center;margin-top:8px">
+        <a class="btn" href="#abstract">Start reading</a>
+        <a class="btn alt" href="whitepaper.pdf" target="_blank" rel="noopener">Open PDF</a>
+      </div>
     </header>
 
-    <!-- GRID: TOC + CONTENT  -->
+    <!-- GRID -->
     <div class="wp-grid">
-
-      <!-- TOC - jerárquico con scroll-spy -->
-      <aside class="wp-toc card reveal show">
+      <!-- TOC -->
+      <aside class="wp-toc card reveal show" id="toc">
         <h2>Contents</h2>
-        <nav aria-label="Table of contents">
-          <ol>
-            <li><a href="#abstract">Abstract</a></li>
-            <li>
-              <a href="#vision">1. Vision & Principles</a>
-            </li>
-            <li>
-              <a href="#crypto">2. Cryptography & Security</a>
-              <ol>
-                <li><a href="#crypto-hybrid">2.1 Hybrid Signatures</a></li>
-                <li><a href="#crypto-vrf">2.2 Randomness (VRF)</a></li>
-                <li><a href="#crypto-audit">2.3 Audit & Bug-bounty</a></li>
-              </ol>
-            </li>
-            <li>
-              <a href="#consensus">3. Consensus & Protocol</a>
-              <ol>
-                <li><a href="#consensus-pos">3.1 PoS + VRF</a></li>
-                <li><a href="#consensus-zk">3.2 zk Rollups (L2)</a></li>
-                <li><a href="#consensus-fees">3.3 Fees & MEV controls</a></li>
-              </ol>
-            </li>
-            <li><a href="#tokenomics">4. Tokenomics</a></li>
-            <li><a href="#privacy">5. Privacy (zk)</a></li>
-            <li><a href="#ux">6. Account Abstraction & UX</a></li>
-            <li><a href="#governance">7. Governance</a></li>
-            <li><a href="#roadmap">8. Roadmap</a></li>
-            <li><a href="#risks">9. Risks & Disclaimers</a></li>
-            <li><a href="#comparative">10. Comparative Analysis</a></li>
-          </ol>
-        </nav>
+        <ol id="toc-root">
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#vision">1. Vision & Principles</a></li>
+          <li>
+            <a href="#crypto">2. Cryptography & Security</a>
+            <ol class="nested">
+              <li><a href="#crypto-hybrid">2.1 Hybrid Signatures</a></li>
+              <li><a href="#crypto-vrf">2.2 Randomness (VRF)</a></li>
+              <li><a href="#crypto-audit">2.3 Audit & Bug-bounty</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#consensus">3. Consensus & Protocol</a>
+            <ol class="nested">
+              <li><a href="#consensus-pos">3.1 PoS + VRF</a></li>
+              <li><a href="#consensus-zk">3.2 zk Rollups (L2)</a></li>
+              <li><a href="#consensus-fees">3.3 Fees & MEV controls</a></li>
+            </ol>
+          </li>
+          <li><a href="#tokenomics">4. Tokenomics</a></li>
+          <li><a href="#privacy">5. Privacy (zk)</a></li>
+          <li><a href="#ux">6. Account Abstraction & UX</a></li>
+          <li><a href="#governance">7. Governance</a></li>
+          <li><a href="#roadmap">8. Roadmap</a></li>
+          <li><a href="#risks">9. Risks & Disclaimers</a></li>
+          <li><a href="#comparative">10. Comparative Landscape</a></li>
+        </ol>
+
+        <!-- Quick actions -->
+        <div class="space"></div>
+        <div class="btn-group">
+          <a class="btn ghost" href="#top">↑ Back to top</a>
+          <a class="btn alt" href="index.html">← Home</a>
+          <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
+        </div>
       </aside>
 
       <!-- CONTENT -->
       <div class="wp-content">
-
         <section id="abstract" class="card wp-section">
           <h2>Abstract</h2>
           <p>
@@ -160,20 +150,20 @@
 
         <section id="tokenomics" class="card wp-section">
           <h2>4. Tokenomics</h2>
-          <ul class="wp-kv">
-            <li><span>Max supply:</span> <strong>81,000,000 QSC</strong></li>
-            <li><span>Use:</span> staking, fees, governance, security incentives</li>
-            <li><span>Inflation:</span> conservative inicial; decaimiento hasta tasa baja o 0 (TBD)</li>
+          <ul class="wp-bullets">
+            <li><strong>Max supply:</strong> 81,000,000 QSC</li>
+            <li><strong>Initial inflation:</strong> conservative, decaying to a low steady rate or 0 (TBD by governance)</li>
+            <li><strong>Use:</strong> staking, fees, governance, security incentives</li>
           </ul>
 
           <h3>Initial Allocation (Draft)</h3>
-          <ul class="tokenomics">
-            <li>Community & ecosystem: 36%</li>
-            <li>Staking & security: 24%</li>
-            <li>R&D & grants: 20%</li>
-            <li>Treasury (locked/vested): 20%</li>
+          <ul class="wp-kv">
+            <li><span>Community & ecosystem</span>36%</li>
+            <li><span>Staking & security</span>24%</li>
+            <li><span>R&D & grants</span>20%</li>
+            <li><span>Treasury (locked/vested)</span>20%</li>
           </ul>
-          <p class="note">Figures are work-in-progress and subject to community review.</p>
+          <p class="muted">Figures are work-in-progress and subject to community review.</p>
         </section>
 
         <section id="privacy" class="card wp-section">
@@ -203,11 +193,11 @@
 
         <section id="roadmap" class="card wp-section">
           <h2>8. Roadmap</h2>
-          <ol class="roadmap">
-            <li class="done">Phase 1 — Litepaper, website, devnet</li>
-            <li>Phase 2 — Testnet, audits, wallet AA</li>
-            <li>Phase 3 — Mainnet genesis, zk-rollup beta</li>
-            <li>Phase 4 — Ecosystem growth & L2 roadmap</li>
+          <ol class="wp-bullets">
+            <li><strong>Phase 1</strong> — Litepaper, website, devnet</li>
+            <li><strong>Phase 2</strong> — Testnet, audits, wallet AA</li>
+            <li><strong>Phase 3</strong> — Mainnet genesis, zk-rollup beta</li>
+            <li><strong>Phase 4</strong> — Ecosystem growth & L2 roadmap</li>
           </ol>
         </section>
 
@@ -216,127 +206,90 @@
           <ul class="wp-bullets">
             <li>Cryptography shifts and PQ assumptions may evolve.</li>
             <li>Economic parameters can change via governance.</li>
-            <li>No investment advice; high-risk technology.</li>
+            <li>No investment advice; high risk technology.</li>
           </ul>
         </section>
 
-        <!-- COMPARATIVA -->
         <section id="comparative" class="card wp-section">
-          <h2>10. Comparative Analysis</h2>
+          <h2>10. Comparative Landscape</h2>
+          <h3>Bitcoin (BTC)</h3>
+          <p>SHA-256/ECDSA (no-PQC), PoW robusto pero alto coste/latencia. QSCOIN prioriza defensa cuántica y UX con PoS + VRF y rollups.</p>
+          <h3>Ethereum (ETH)</h3>
+          <p>PoS + rollups, gran ecosistema. QSCOIN nace <em>quantum-ready</em> (híbrido PQC) y AA/pagos zk integrados por defecto.</p>
+          <h3>Solana (SOL)</h3>
+          <p>Altísimo throughput (PoH/PoS), enfoque monolítico; no PQC nativo. QSCOIN opta por modularidad con rollups y firmas híbridas.</p>
+          <h3>Tezos (XTZ)</h3>
+          <p>On-chain governance elegante; hoy sin PQC base. QSCOIN integra PQC/AA/zk desde el diseño.</p>
+          <h3>QRL</h3>
+          <p>Pionero PQC (XMSS) con trade-offs de rendimiento y UX. QSCOIN busca equilibrio práctico: híbrido PQ + clásico, AA, zk-rollups y compatibilidad HW.</p>
 
           <div class="wp-compare">
-            <h3>Bitcoin (BTC)</h3>
-            <p>SHA-256/ECDSA (no-PQC), PoW robusto pero alto coste/latencia. QSCOIN prioriza defensa cuántica y UX (AA, zk), manteniendo seguridad con PoS + VRF y rollups.</p>
-          </div>
-
-          <div class="wp-compare">
-            <h3>Ethereum (ETH)</h3>
-            <p>PoS + rollups, enorme ecosistema. QSCOIN nace <em>quantum-ready</em> (híbrido PQC) y empuja AA + pagos zk integrados por defecto.</p>
-          </div>
-
-          <div class="wp-compare">
-            <h3>Solana (SOL)</h3>
-            <p>Altísimo throughput (PoH/PoS), enfoque monolítico; sin PQC nativo. QSCOIN elige modularidad con rollups y firmas híbridas resistentes a PQ.</p>
-          </div>
-
-          <div class="wp-compare">
-            <h3>Tezos (XTZ)</h3>
-            <p>On-chain governance y upgrades elegantes; hoy sin PQC base. QSCOIN integra PQC/AA/zk desde el diseño inicial.</p>
-          </div>
-
-          <div class="wp-compare">
-            <h3>QRL</h3>
-            <p>Pionero PQC (XMSS) con trade-offs de rendimiento/UX. QSCOIN busca equilibrio práctico: híbrido PQ + clásico, AA, zk-rollups y compatibilidad de hardware.</p>
+            <div class="btn-group">
+              <a class="btn ghost" href="#top">↑ Back to top</a>
+              <a class="btn alt" href="index.html">← Home</a>
+              <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
+            </div>
           </div>
         </section>
-
-        <!-- Botones finales -->
-        <div class="wp-actions card">
-          <h3>Explore More</h3>
-          <div class="actions">
-            <a class="btn" href="index.html">← Back to Home</a>
-            <a class="btn" href="#hero">↑ Go to Top</a>
-            <a class="btn" href="whitepaper.pdf" target="_blank" rel="noopener">Download PDF</a>
-            <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
-          </div>
-        </div>
-
-      </div><!-- /.wp-content -->
-    </div><!-- /.wp-grid -->
+      </div>
+    </div>
 
     <footer class="site-footer">© 2025 QSCOIN — All rights reserved</footer>
-  </div><!-- /.container -->
+  </main>
 
-  <!-- Theme toggle & scroll-spy -->
   <script>
-    // Dark/Light toggle
+    // Theme toggle
     (function(){
-      const btn = document.getElementById('themeToggle');
-      if(!btn) return;
-      const root = document.documentElement;
-      const saved = localStorage.getItem('theme');
+      const btn=document.getElementById('themeToggle'); if(!btn) return;
+      const root=document.documentElement, saved=localStorage.getItem('theme');
       if(saved) root.setAttribute('data-theme', saved);
-      btn.addEventListener('click', () => {
-        const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', cur);
-        localStorage.setItem('theme', cur);
-        btn.querySelector('span').textContent = cur === 'dark' ? 'Light' : 'Dark';
-      });
+      btn.addEventListener('click',()=>{const cur=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',cur);localStorage.setItem('theme',cur);btn.querySelector('span').textContent=cur==='dark'?'Light':'Dark';});
     })();
 
-    // Scroll-spy para el TOC (activa hijos y padre)
-    (function(){
-      const toc = document.querySelector('.wp-toc');
-      if (!toc) return;
+    // Reveal on scroll
+    const revealEls=[...document.querySelectorAll('.reveal')];
+    const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}}),{threshold:.18});
+    revealEls.forEach(el=>io.observe(el));
 
-      const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
-      const linkById = new Map(
-        links.map(a => [decodeURIComponent(a.getAttribute('href').slice(1)), a])
-      );
+    // ===== Scroll-Spy (TOC) =====
+    const sections=[...document.querySelectorAll('.wp-section')];
+    const tocRoot=document.getElementById('toc-root');
+    const tocLinks=[...tocRoot.querySelectorAll('a')];
 
-      const sections = Array.from(document.querySelectorAll('.wp-section[id]'));
-      let activeId = null;
+    // Mapa id -> li
+    const liMap=new Map();
+    tocLinks.forEach(a=>{
+      const id=a.getAttribute('href').replace('#','');
+      liMap.set(id, a.parentElement);
+    });
 
-      const setActive = (id) => {
-        if (activeId === id) return;
-
-        if (activeId && linkById.get(activeId)) {
-          const oldA = linkById.get(activeId);
-          oldA.classList.remove('active');
-          const parent = oldA.closest('ol').previousElementSibling;
-          if (parent && parent.tagName === 'A') parent.classList.remove('active');
-        }
-
-        if (id && linkById.get(id)) {
-          const a = linkById.get(id);
-          a.classList.add('active');
-          const parent = a.closest('ol').previousElementSibling;
-          if (parent && parent.tagName === 'A') parent.classList.add('active');
-        }
-
-        activeId = id || null;
-      };
-
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          const id = entry.target.id;
-          if (entry.isIntersecting){ setActive(id); }
-        });
-      }, { rootMargin: "-25% 0px -70% 0px", threshold: [0.25, 0.6] });
-
-      sections.forEach(sec => io.observe(sec));
-
-      window.addEventListener('load', () => {
-        const id = decodeURIComponent(location.hash.replace('#',''));
-        if (id) setActive(id);
+    // Observador para activar item
+    const spy=new IntersectionObserver((entries)=>{
+      entries.forEach(({isIntersecting,target})=>{
+        if(!isIntersecting) return;
+        const id=target.id;
+        // limpiar activos
+        tocRoot.querySelectorAll('.active').forEach(li=>li.classList.remove('active'));
+        // activar li correspondiente y su padre si aplica
+        const li=liMap.get(id);
+        if(li){ li.classList.add('active'); const parent=li.closest('ol').previousElementSibling; if(parent && parent.tagName==='A'){ li.closest('li').classList.add('active'); } }
+        history.replaceState(null,'','#'+id);
       });
+    },{rootMargin:"-55% 0px -40% 0px",threshold:0});
 
-      links.forEach(a=>{
-        a.addEventListener('click', () => {
-          setTimeout(() => setActive(decodeURIComponent(a.getAttribute('href').slice(1))), 200);
-        });
+    sections.forEach(sec=>spy.observe(sec));
+
+    // Suavizar desplazamiento en TOC
+    tocLinks.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(!el) return;
+        const y=el.getBoundingClientRect().top + window.pageYOffset - 78; // compensa nav sticky
+        window.scrollTo({top:y,behavior:'smooth'});
       });
-    })();
+    });
   </script>
 </body>
 </html>
