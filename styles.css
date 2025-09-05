@@ -220,3 +220,28 @@ html[data-theme="dark"] .wp-hero{
     radial-gradient(220px 160px at 50% 90px, rgba(255,255,255,.12), rgba(255,255,255,0) 65%),
     linear-gradient(180deg, var(--blue-1), var(--blue-2) 55%, var(--blue-3));
 }
+/* ===== Whitepaper layout fix ===== */
+.wp-grid{
+  display: grid;
+  grid-template-columns: 1fr;   /* móvil: una columna */
+  gap: 14px;
+  align-items: start;
+  margin-top: 14px;
+}
+.wp-content { min-width: 0; }
+
+@media (min-width: 980px){
+  .wp-grid{
+    grid-template-columns: 280px 1fr; /* TOC + contenido */
+    gap: 16px;
+  }
+  .wp-toc{
+    position: sticky;
+    top: 14px;
+    z-index: 0;                 /* que no se monte sobre el contenido */
+  }
+}
+
+.wp-toc { margin-top: 0; }
+.wp-toc ol { margin: 0; }
+.wp-section { margin: 0; }
