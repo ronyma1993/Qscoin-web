@@ -3,200 +3,314 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QSCOIN • Quantum-safe cryptocurrency</title>
-  <meta name="description" content="QSCOIN — quantum-safe cryptocurrency. Hybrid PQC, zk privacy, PoS + VRF, account abstraction." />
+  <title>QSCOIN — Quantum-safe cryptocurrency</title>
+  <meta name="description" content="QSCOIN • quantum-safe cryptocurrency with hybrid PQC signatures, zk privacy, PoS+VRF, account abstraction and a capped supply.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
-  <!-- Toggle tema -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <i>🌙</i><span>Dark</span>
-  </button>
+  <!-- Controls -->
+  <div class="controls">
+    <button class="control-btn" id="langToggle" aria-label="Switch language"><i>🌐</i><span id="langLabel">ES</span></button>
+    <button class="control-btn" id="themeToggle" aria-label="Toggle theme"><i>🌙</i><span>Dark</span></button>
+  </div>
 
   <div class="container">
 
     <!-- HERO -->
-    <header class="hero reveal show">
+    <header class="hero reveal show" id="top">
       <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo" />
-      <h1 class="hero-tagline">Build a future-proof cryptocurrency</h1>
-      <p>Quantum-safe by default • Hybrid PQC • zk privacy • PoS + VRF • 81,000,000 supply cap</p>
+      <h1 class="hero-tagline" data-i18n="hero.title">Build a future-proof cryptocurrency</h1>
+      <p data-i18n="hero.subtitle">Hybrid PQC signatures • zk privacy • PoS + VRF • Account abstraction</p>
 
       <div class="actions">
-        <a class="btn" href="whitepaper.html">Read Whitepaper</a>
-        <a class="btn ghost" href="#community">Join community</a>
+        <a class="btn" href="whitepaper.html" data-i18n="hero.read">Read Whitepaper</a>
+        <a class="btn secondary" href="https://t.me/QSC_Official" target="_blank" rel="noopener" data-i18n="hero.join">Join community</a>
       </div>
-
-      <!-- Social en HERO -->
-      <ul class="social-hero">
-        <li><a class="social-chip brand-x" href="https://x.com/QSCoin_official?s=09" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#ico-x"/></svg><span>X/Twitter</span></a></li>
-        <li><a class="social-chip brand-telegram" href="https://t.me/QSC_Official" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#ico-telegram"/></svg><span>Telegram</span></a></li>
-        <li><a class="social-chip brand-facebook" href="https://www.facebook.com/share/19pp7J2dCR/" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#ico-facebook"/></svg><span>Facebook</span></a></li>
-      </ul>
-
-      <ul class="hero-bullets">
-        <li>Hybrid signatures (PQC + classical)</li>
-        <li>zk rollups & payment proofs</li>
-        <li>Account abstraction wallets</li>
-        <li>Composable modular design</li>
-      </ul>
     </header>
 
-    <!-- FEATURES -->
-    <section class="card">
-      <h2>Why QSCOIN</h2>
+    <!-- WHY -->
+    <section class="card reveal show">
+      <h2 data-i18n="why.title">Why QSCOIN</h2>
       <div class="grid">
         <div class="feature">
-          <div class="feat-ico brand-x"><svg><use href="#ico-shield"/></svg></div>
-          <h3>Quantum-safe</h3>
-          <p>Firmas híbridas (PQC + Ed25519) para seguridad hoy y resiliencia mañana.</p>
+          <div class="f-icon" title="Security">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3l8 3v6c0 5-3.5 9-8 9s-8-4-8-9V6l8-3z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="why.sec.h">Quantum-safe</h3>
+            <p data-i18n="why.sec.p">Hybrid signatures (PQC + classical) for resilience today and tomorrow.</p>
+          </div>
         </div>
+
         <div class="feature">
-          <div class="feat-ico brand-telegram"><svg><use href="#ico-zk"/></svg></div>
-          <h3>Privacy (zk)</h3>
-          <p>Pruebas de pago y divulgación selectiva para flujos empresariales.</p>
+          <div class="f-icon" title="Privacy">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 9h18M8 13h8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="why.privacy.h">Privacy (zk)</h3>
+            <p data-i18n="why.privacy.p">zk payment proofs and selective disclosure for business workflows.</p>
+          </div>
         </div>
+
         <div class="feature">
-          <div class="feat-ico brand-facebook"><svg><use href="#ico-aa"/></svg></div>
-          <h3>Account Abstraction</h3>
-          <p>Passkeys, social recovery, session keys y gas patrocinado.</p>
+          <div class="f-icon" title="UX">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M5 20c1.5-3 4-4.5 7-4.5S17.5 17 19 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="why.ux.h">Account Abstraction</h3>
+            <p data-i18n="why.ux.p">Passkeys, social recovery, session keys and gas-sponsored flows.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- TOKENOMICS -->
+    <section class="card reveal show">
+      <h2 data-i18n="tok.title">Tokenomics</h2>
+      <ul class="tokenomics">
+        <li><strong data-i18n="tok.max.h">Max supply:</strong> <span>81,000,000 QSC</span></li>
+        <li><strong data-i18n="tok.use.h">Use:</strong> <span data-i18n="tok.use.v">staking, fees, governance, security incentives</span></li>
+      </ul>
+      <h3 data-i18n="tok.alloc.h3">Initial Allocation (Draft)</h3>
+      <ul class="tokenomics">
+        <li data-i18n="tok.alloc.v1">Community & ecosystem: 36%</li>
+        <li data-i18n="tok.alloc.v2">Staking & security: 24%</li>
+        <li data-i18n="tok.alloc.v3">R&amp;D & grants: 20%</li>
+        <li data-i18n="tok.alloc.v4">Treasury (locked/vested): 20%</li>
+      </ul>
+      <p class="note" data-i18n="tok.note">Figures are work-in-progress and subject to community review.</p>
+    </section>
+
     <!-- ROADMAP -->
-    <section class="card">
-      <h2>Roadmap</h2>
+    <section class="card reveal show">
+      <h2 data-i18n="road.title">Roadmap</h2>
       <ol class="roadmap">
-        <li class="done">Phase 1 — Litepaper, website, devnet</li>
-        <li>Phase 2 — Testnet, audits, wallet AA</li>
-        <li>Phase 3 — Mainnet genesis, zk-rollup beta</li>
-        <li>Phase 4 — Ecosystem & adoption</li>
+        <li class="done" data-i18n="road.p1">Phase 1 — Litepaper, website, devnet</li>
+        <li data-i18n="road.p2">Phase 2 — Testnet, audits, wallet AA</li>
+        <li data-i18n="road.p3">Phase 3 — Mainnet genesis, zk-rollup beta</li>
+        <li data-i18n="road.p4">Phase 4 — Ecosystem & adoption</li>
       </ol>
     </section>
 
     <!-- FAQ -->
-    <section class="card">
-      <h2>FAQ</h2>
-      <div class="accordion" id="faq">
-        <article class="accordion-item">
+    <section class="card reveal show">
+      <h2 data-i18n="faq.title">FAQ</h2>
+      <div class="accordion">
+        <div class="accordion-item">
           <h3 class="accordion-header">
             <button class="accordion-trigger" aria-expanded="false">
-              <span>What makes QSCOIN “quantum-safe”?</span><i class="chev"></i>
+              <span data-i18n="faq.q1">What makes QSCOIN “quantum-safe”?</span>
+              <span class="chev"></span>
             </button>
           </h3>
           <div class="accordion-panel">
-            <p>Usamos firmas híbridas (PQC + clásica) y VRF para selección aleatoria en consenso.</p>
+            <p data-i18n="faq.a1">Default accounts bind a classical signature (e.g., Ed25519) with a PQC signature (e.g., CRYSTALS-Dilithium) in a single verification path.</p>
           </div>
-        </article>
-        <article class="accordion-item">
+        </div>
+
+        <div class="accordion-item">
           <h3 class="accordion-header">
             <button class="accordion-trigger" aria-expanded="false">
-              <span>When is testnet?</span><i class="chev"></i>
+              <span data-i18n="faq.q2">When is testnet?</span>
+              <span class="chev"></span>
             </button>
           </h3>
           <div class="accordion-panel">
-            <p>Testnet pública en la Fase 2 con auditorías y billetera AA.</p>
+            <p data-i18n="faq.a2">Public testnet is planned in Phase 2 after audits and wallet AA milestones.</p>
           </div>
-        </article>
-        <article class="accordion-item">
+        </div>
+
+        <div class="accordion-item">
           <h3 class="accordion-header">
             <button class="accordion-trigger" aria-expanded="false">
-              <span>How can I participate?</span><i class="chev"></i>
+              <span data-i18n="faq.q3">How can I participate?</span>
+              <span class="chev"></span>
             </button>
           </h3>
           <div class="accordion-panel">
-            <p>Únete al Telegram, propón ideas en X/Twitter y colabora en devnet.</p>
+            <p data-i18n="faq.a3">Join the Telegram group, follow our X account, and contribute feedback on the whitepaper.</p>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- COMMUNITY -->
-    <section class="card" id="community">
-      <h2>Community</h2>
-      <ul class="social-list">
-        <li>
-          <a class="social-btn brand-x" href="https://x.com/QSCoin_official?s=09" target="_blank" rel="noopener" aria-label="X / Twitter">
-            <svg aria-hidden="true"><use href="#ico-x"/></svg><span>X/Twitter</span>
+    <!-- FOOTER / COMMUNITY -->
+    <footer class="site-footer">
+      <div class="community-card">
+        <h2 class="title" data-i18n="community.title">Community</h2>
+        <div class="social-list">
+          <a href="https://x.com/QSCoin_official?s=09" class="social-btn social-x" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714 0h238L490 511l461 716H713L462 789 189 1227H0l274-443L26 0h242l176 539z"/></svg>
+            <span data-i18n="social.x">X/Twitter</span>
           </a>
-        </li>
-        <li>
-          <a class="social-btn brand-telegram" href="https://t.me/QSC_Official" target="_blank" rel="noopener" aria-label="Telegram">
-            <svg aria-hidden="true"><use href="#ico-telegram"/></svg><span>Telegram</span>
+          <a href="https://t.me/QSC_Official" class="social-btn social-telegram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><path fill="currentColor" d="M120 0c66.3 0 120 53.7 120 120s-53.7 120-120 120S0 186.3 0 120 53.7 0 120 0zm59.6 82.5c-1.9-1.6-4.5-1.9-7.3-.9l-121 46c-2.8 1.1-4.6 3.3-4.8 6s1.3 5.1 3.9 6.5l28.5 13.5 16.8 55.1c.8 2.7 2.9 4.7 5.6 5.3 2.6.6 5.4-.3 7.3-2.3l24.5-25.5 30.5 22.5c2.4 1.8 5.6 2 8.2.5 2.6-1.4 4.2-4.2 4.1-7.1l-1.5-82.5 40.2-31c2.5-1.9 3.3-5.2 1.8-7.9-.5-.9-1.2-1.6-2-2.2z"/></svg>
+            <span data-i18n="social.tg">Telegram</span>
           </a>
-        </li>
-        <li>
-          <a class="social-btn brand-facebook" href="https://www.facebook.com/share/19pp7J2dCR/" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg aria-hidden="true"><use href="#ico-facebook"/></svg><span>Facebook</span>
+          <a href="https://www.facebook.com/share/19pp7J2dCR/" class="social-btn social-facebook" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S293.3 0 268.08 0c-73.12 0-121.14 44.38-121.14 124.72v70.62H86.41V288h60.53v224h92.66V288z"/></svg>
+            <span data-i18n="social.fb">Facebook</span>
           </a>
-        </li>
-        <li>
-          <a class="social-btn brand-mail" href="mailto:hello@qscoin.org" aria-label="Email">
-            <svg aria-hidden="true"><use href="#ico-mail"/></svg><span>Email</span>
+          <a href="mailto:info@qscoin.org" class="social-btn social-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8L327.4 338.6c-15.9 13.5-39.1 13.5-55 0L9.7 190.8C3.9 186.2 0 179.1 0 171.6V112c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v59.6c0 7.5-3.9 14.6-9.7 19.2zM0 240v176c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V240l-155.8 132.6c-26.2 22.3-64.4 22.3-90.6 0L0 240z"/></svg>
+            <span data-i18n="social.mail">Email</span>
           </a>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </div>
+      <p class="site-footer" data-i18n="footer">© 2025 QSCOIN — All rights reserved</p>
+    </footer>
 
-    <footer class="site-footer">© 2025 QSCOIN — All rights reserved</footer>
-  </div>
+  </div><!-- /.container -->
 
-  <!-- ====== SVG symbols ====== -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="ico-x" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M18.146 3H21l-6.62 7.56L21.5 21h-6.9l-4.52-5.81L4.84 21H2l7.1-8.12L2.5 3h6.9l4.16 5.36L18.146 3Zm-2.41 16h1.73L7.34 5h-1.8l10.2 14Z"/>
-    </symbol>
-    <symbol id="ico-telegram" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M21.9 4.6c.3-.12.6.16.5.47l-3.18 14.94c-.07.34-.46.5-.77.34l-4.14-2.24-2.22 2.2c-.25.25-.68.14-.79-.2l-1.6-5.27-4.6-1.8c-.36-.14-.34-.66.03-.76L21.9 4.6ZM8.7 12.7l1.04 3.45.23-2.25 7.8-7.07-9.07 5.87Z"/>
-    </symbol>
-    <symbol id="ico-facebook" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M22 12.07C22 6.52 17.52 2 12 2S2 6.52 2 12.07C2 17.1 5.66 21.3 10.44 22v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.86h2.78l-.44 2.9h-2.34V22C18.34 21.3 22 17.1 22 12.07Z"/>
-    </symbol>
-    <symbol id="ico-mail" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7L4.5 7.5h15L12 12Z"/>
-    </symbol>
-    <symbol id="ico-shield" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2l7 3v6c0 5-3.5 9.3-7 11-3.5-1.7-7-6-7-11V5l7-3Z"/>
-    </symbol>
-    <symbol id="ico-zk" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M4 6h16v12H4V6Zm2 2v8h12V8H6Zm3 1h6v2H9V9Zm0 4h6v2H9v-2Z"/>
-    </symbol>
-    <symbol id="ico-aa" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/>
-    </symbol>
-  </svg>
-
-  <!-- JS: tema + accordion -->
   <script>
+    /* ========== Theme toggle ========== */
     (function(){
       const btn = document.getElementById('themeToggle');
+      if(!btn) return;
       const root = document.documentElement;
       const saved = localStorage.getItem('theme');
       if(saved) root.setAttribute('data-theme', saved);
-      if(btn){
-        btn.addEventListener('click', ()=>{
-          const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          root.setAttribute('data-theme', cur);
-          localStorage.setItem('theme', cur);
-          btn.querySelector('span').textContent = cur === 'dark' ? 'Light' : 'Dark';
-        });
+      btn.addEventListener('click', () => {
+        const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', cur);
+        localStorage.setItem('theme', cur);
+        btn.querySelector('span').textContent = cur === 'dark' ? 'Light' : 'Dark';
+      });
+    })();
+
+    /* ========== Accordion ========== */
+    document.querySelectorAll('.accordion-trigger').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const panel = btn.parentElement.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        if(expanded){
+          panel.style.maxHeight = '0px';
+          panel.style.paddingBottom = '0px';
+        }else{
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          panel.style.paddingBottom = '12px';
+        }
+      })
+    });
+
+    /* ========== i18n (EN/ES) ========== */
+    const I18N = {
+      en:{
+        'lang.label':'ES',
+        'hero.title':'Build a future-proof cryptocurrency',
+        'hero.subtitle':'Hybrid PQC signatures • zk privacy • PoS + VRF • Account abstraction',
+        'hero.read':'Read Whitepaper',
+        'hero.join':'Join community',
+        'why.title':'Why QSCOIN',
+        'why.sec.h':'Quantum-safe',
+        'why.sec.p':'Hybrid signatures (PQC + classical) for resilience today and tomorrow.',
+        'why.privacy.h':'Privacy (zk)',
+        'why.privacy.p':'zk payment proofs and selective disclosure for business workflows.',
+        'why.ux.h':'Account Abstraction',
+        'why.ux.p':'Passkeys, social recovery, session keys and gas-sponsored flows.',
+        'tok.title':'Tokenomics',
+        'tok.max.h':'Max supply:',
+        'tok.use.h':'Use:',
+        'tok.use.v':'staking, fees, governance, security incentives',
+        'tok.alloc.h3':'Initial Allocation (Draft)',
+        'tok.alloc.v1':'Community & ecosystem: 36%',
+        'tok.alloc.v2':'Staking & security: 24%',
+        'tok.alloc.v3':'R&D & grants: 20%',
+        'tok.alloc.v4':'Treasury (locked/vested): 20%',
+        'tok.note':'Figures are work-in-progress and subject to community review.',
+        'road.title':'Roadmap',
+        'road.p1':'Phase 1 — Litepaper, website, devnet',
+        'road.p2':'Phase 2 — Testnet, audits, wallet AA',
+        'road.p3':'Phase 3 — Mainnet genesis, zk-rollup beta',
+        'road.p4':'Phase 4 — Ecosystem & adoption',
+        'faq.title':'FAQ',
+        'faq.q1':'What makes QSCOIN “quantum-safe”?',
+        'faq.a1':'Default accounts bind a classical signature (e.g., Ed25519) with a PQC signature (e.g., CRYSTALS-Dilithium) in a single verification path.',
+        'faq.q2':'When is testnet?',
+        'faq.a2':'Public testnet is planned in Phase 2 after audits and wallet AA milestones.',
+        'faq.q3':'How can I participate?',
+        'faq.a3':'Join the Telegram group, follow our X account, and contribute feedback on the whitepaper.',
+        'community.title':'Community',
+        'social.x':'X/Twitter',
+        'social.tg':'Telegram',
+        'social.fb':'Facebook',
+        'social.mail':'Email',
+        'footer':'© 2025 QSCOIN — All rights reserved'
+      },
+      es:{
+        'lang.label':'EN',
+        'hero.title':'Construye una criptomoneda preparada para el futuro',
+        'hero.subtitle':'Firmas PQC híbridas • privacidad zk • PoS + VRF • Abstracción de cuentas',
+        'hero.read':'Leer Whitepaper',
+        'hero.join':'Unirse a la comunidad',
+        'why.title':'¿Por qué QSCOIN?',
+        'why.sec.h':'Seguro frente a cuántica',
+        'why.sec.p':'Firmas híbridas (PQC + clásico) para resiliencia hoy y mañana.',
+        'why.privacy.h':'Privacidad (zk)',
+        'why.privacy.p':'Pruebas de pago zk y divulgación selectiva para flujos empresariales.',
+        'why.ux.h':'Abstracción de Cuentas',
+        'why.ux.p':'Passkeys, recuperación social, session keys y flujos con gas patrocinado.',
+        'tok.title':'Tokenomics',
+        'tok.max.h':'Suministro máximo:',
+        'tok.use.h':'Uso:',
+        'tok.use.v':'staking, comisiones, gobernanza, incentivos de seguridad',
+        'tok.alloc.h3':'Asignación inicial (Borrador)',
+        'tok.alloc.v1':'Comunidad y ecosistema: 36%',
+        'tok.alloc.v2':'Staking y seguridad: 24%',
+        'tok.alloc.v3':'I+D y becas: 20%',
+        'tok.alloc.v4':'Tesorería (bloqueado/vested): 20%',
+        'tok.note':'Cifras en desarrollo y sujetas a revisión comunitaria.',
+        'road.title':'Hoja de ruta',
+        'road.p1':'Fase 1 — Litepaper, web, devnet',
+        'road.p2':'Fase 2 — Testnet, auditorías, wallet AA',
+        'road.p3':'Fase 3 — Génesis mainnet, zk-rollup beta',
+        'road.p4':'Fase 4 — Ecosistema y adopción',
+        'faq.title':'FAQ',
+        'faq.q1':'¿Qué hace a QSCOIN “seguro frente a cuántica”?',
+        'faq.a1':'Las cuentas vinculan una firma clásica (p. ej., Ed25519) con una firma PQC (p. ej., CRYSTALS-Dilithium) en una sola verificación.',
+        'faq.q2':'¿Cuándo es el testnet?',
+        'faq.a2':'El testnet público está previsto en la Fase 2 tras auditorías y hitos de AA.',
+        'faq.q3':'¿Cómo puedo participar?',
+        'faq.a3':'Únete al grupo de Telegram, sigue nuestra cuenta en X y aporta feedback al whitepaper.',
+        'community.title':'Comunidad',
+        'social.x':'X/Twitter',
+        'social.tg':'Telegram',
+        'social.fb':'Facebook',
+        'social.mail':'Email',
+        'footer':'© 2025 QSCOIN — Todos los derechos reservados'
       }
-      document.querySelectorAll('.accordion-trigger').forEach(t=>{
-        t.addEventListener('click', ()=>{
-          const open = t.getAttribute('aria-expanded')==='true';
-          t.setAttribute('aria-expanded', !open);
-          const panel = t.parentElement.nextElementSibling;
-          panel.style.maxHeight = !open ? panel.scrollHeight+'px' : '0px';
-          panel.style.paddingBottom = !open ? '12px' : '0px';
-        });
+    };
+
+    function applyI18n(lang){
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(I18N[lang] && I18N[lang][key]) el.textContent = I18N[lang][key];
+      });
+      document.getElementById('langLabel').textContent = I18N[lang]['lang.label'];
+      localStorage.setItem('lang', lang);
+      document.documentElement.setAttribute('lang', lang === 'es' ? 'es' : 'en');
+    }
+
+    (function initLang(){
+      const saved = localStorage.getItem('lang') || 'en';
+      applyI18n(saved);
+      document.getElementById('langToggle').addEventListener('click', ()=>{
+        const cur = localStorage.getItem('lang') || 'en';
+        applyI18n(cur === 'en' ? 'es' : 'en');
       });
     })();
   </script>
