@@ -1,79 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QSCOIN Whitepaper</title>
-  <link rel="stylesheet" href="styles.css?v=3"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>QSCOIN — Whitepaper</title>
+  <meta name="description" content="QSCOIN Whitepaper — Quantum-safe, zk-enabled, community-first cryptocurrency."/>
+  <link rel="canonical" href="https://qscoin.org/whitepaper"/>
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="styles.css?v=wp2"/>
+
+  <!-- Estilos ligeros solo para esta página -->
+  <style>
+    .wp-hero{
+      margin: 18px auto 16px; padding: 28px 18px; text-align:center;
+      border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow); color:#fff;
+      background:
+        radial-gradient(260px 200px at 50% 90px, rgba(255,255,255,.68), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, var(--blue-1), var(--blue-2) 55%, var(--blue-3));
+    }
+    .wp-hero img{ width:120px; height:auto; display:block; margin:6px auto 10px; filter:drop-shadow(0 10px 22px rgba(0,0,0,.18)); }
+    .wp-hero h1{ color:#fff; margin: 8px 0 6px; letter-spacing:.2px; }
+    .wp-meta{ color: #eef5ff; opacity:.95; font-weight:600; margin-top:4px; }
+
+    .wp-layout{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns: 260px 1fr; gap:18px; padding: 0 16px 48px; }
+    .wp-toc{
+      position: sticky; top: 14px; align-self: start;
+      background: var(--card); border:1px solid var(--border); border-radius:14px; box-shadow: var(--shadow);
+      padding:14px;
+    }
+    .wp-toc h3{font-size:16px;margin:0 0 8px}
+    .wp-toc ul{list-style:none; padding-left:0; display:grid; gap:8px; margin:0}
+    .wp-toc a{font-weight:800; text-decoration:none}
+    .wp-toc a:hover{text-decoration:underline}
+    .wp-section{ scroll-margin-top:90px; }
+    .wp-kv{ display:grid; gap:8px; }
+    .wp-kv div{ display:flex; justify-content:space-between; gap:16px; border:1px solid var(--border); background:var(--panel); padding:10px 12px; border-radius:10px; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .muted{ color: var(--muted); }
+    .small{ font-size: 13px; }
+    .btn-row{ display:flex; gap:10px; flex-wrap:wrap; }
+    .callout{ border-left:4px solid #10b981; padding:10px 12px; background:var(--panel); border-radius:10px; }
+    .backtop{ position:fixed; right:14px; bottom:18px; z-index:999; }
+    @media (max-width: 900px){
+      .wp-layout{ grid-template-columns: 1fr; }
+      .wp-toc{ position: static; }
+    }
+    html{ scroll-behavior:smooth; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>QSCOIN Whitepaper</h1>
-    <p><em>Draft — Community review version</em></p>
 
-    <section class="card">
-      <h2>Abstract</h2>
-      <p>
-        QSCOIN is a next-generation, quantum-safe cryptocurrency designed to remain secure in the
-        advent of quantum computing. By combining post-quantum cryptography (PQC), hybrid consensus,
-        and zero-knowledge proofs, QSCOIN aims to deliver long-term resilience, scalability, and
-        privacy.
-      </p>
-    </section>
+  <a href="./" class="theme-toggle" style="position:fixed;left:14px;top:14px;text-decoration:none">← Home</a>
 
-    <section class="card">
-      <h2>Vision</h2>
-      <p>
-        Our vision is to build a digital currency that is not only resistant to current threats but
-        also future-proof against the capabilities of quantum computers, ensuring safety and trust
-        for decades to come.
-      </p>
-    </section>
+  <!-- HERO -->
+  <header class="container">
+    <div class="wp-hero">
+      <img src="logo-transparent.png" alt="QSCOIN logo" width="120" height="120"/>
+      <h1>QSCOIN Whitepaper</h1>
+      <p class="wp-meta">Quantum-Safe • zk-enabled • Community-first • 81,000,000 max supply</p>
+      <div class="btn-row" style="justify-content:center;margin-top:8px">
+        <a class="btn" href="#toc">Read online</a>
+        <a class="btn" href="#" onclick="window.print();return false;">Print / Save PDF</a>
+      </div>
+    </div>
+  </header>
 
-    <section class="card">
-      <h2>Tokenomics</h2>
-      <ul class="tokenomics">
-        <li><strong>Ticker:</strong> QSC</li>
-        <li><strong>Max Supply:</strong> 81,000,000</li>
-        <li><strong>Consensus:</strong> Hybrid (PQC + classical)</li>
-        <li><strong>Allocation:</strong> Community-first</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Technology Stack</h2>
+  <!-- LAYOUT: TOC + CONTENT -->
+  <div class="wp-layout">
+    <!-- TOC -->
+    <nav class="wp-toc" id="toc">
+      <h3>Contents</h3>
       <ul>
-        <li>Post-Quantum Cryptography (NIST-approved algorithms)</li>
-        <li>Zero-Knowledge Proofs for privacy and scalability</li>
-        <li>Hybrid consensus ensuring compatibility and resilience</li>
-        <li>Cross-chain interoperability for a multi-chain ecosystem</li>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#vision">1. Vision & Principles</a></li>
+        <li><a href="#crypto">2. Cryptography & Security</a></li>
+        <li><a href="#consensus">3. Consensus & Protocol</a></li>
+        <li><a href="#tokenomics">4. Tokenomics</a></li>
+        <li><a href="#privacy">5. Privacy (zk)</a></li>
+        <li><a href="#aa">6. Account Abstraction & UX</a></li>
+        <li><a href="#governance">7. Governance</a></li>
+        <li><a href="#roadmap">8. Roadmap</a></li>
+        <li><a href="#risk">9. Risks & Disclaimers</a></li>
       </ul>
-    </section>
+    </nav>
 
-    <section class="card">
-      <h2>Roadmap</h2>
-      <ol class="roadmap">
-        <li class="done">Phase 1 — Launch website & litepaper</li>
-        <li>Phase 2 — Testnet launch with hybrid PQC algorithms</li>
-        <li>Phase 3 — Community governance framework</li>
-        <li>Phase 4 — Mainnet release & global adoption</li>
-      </ol>
-    </section>
+    <!-- CONTENT -->
+    <main>
+      <section class="card wp-section" id="abstract">
+        <h2>Abstract</h2>
+        <p>
+          QSCoin is a next-generation cryptocurrency designed to remain secure in a post-quantum world,
+          combining <strong>hybrid post-quantum signatures</strong> with <strong>zk-proofs</strong> for privacy and scalability,
+          <strong>VRF-based randomness</strong> for fairness, and a <strong>community-first token economy</strong>.
+        </p>
+        <div class="callout" style="margin-top:8px">
+          <strong>Max Supply:</strong> <span class="mono">81,000,000 QSC</span> ·
+          <strong>Ticker:</strong> <span class="mono">QSC</span> ·
+          <strong>Consensus (R&amp;D):</strong> Hybrid PoS + PQC ·
+          <strong>Privacy:</strong> Opt-in zk-SNARK notes
+        </div>
+      </section>
 
-    <section class="card">
-      <h2>Disclaimer</h2>
-      <p>
-        This document is for informational purposes only and does not constitute financial advice.
-        Cryptocurrency investments involve risks, including regulatory and technical uncertainties.
-        Always do your own research (DYOR).
-      </p>
-    </section>
+      <section class="card wp-section" id="vision">
+        <h2>1. Vision & Principles</h2>
+        <p>
+          Build a chain that is <em>future-proof</em> against quantum adversaries while offering modern UX and privacy controls.
+          QSCoin prioritizes security, verifiability, credible neutrality, and responsible rollouts.
+        </p>
+        <ul>
+          <li><strong>Quantum-safe by default</strong>, compatibility via hybrid signatures.</li>
+          <li><strong>Community-first</strong>: transparent supply, public roadmap, open development.</li>
+          <li><strong>Optional privacy</strong> with clear compliance paths.</li>
+          <li><strong>Lean base layer</strong> + rollup-friendly design for scale.</li>
+        </ul>
+      </section>
 
-    <p class="small center">© <span id="year"></span> QSCOIN — Draft Whitepaper</p>
+      <section class="card wp-section" id="crypto">
+        <h2>2. Cryptography & Security</h2>
+        <h3>2.1 Hybrid Signatures</h3>
+        <ul>
+          <li>PQC: CRYSTALS-Dilithium (levels tuned per mainnet audits).</li>
+          <li>Classical: ECDSA/secp256k1 for ecosystem compatibility.</li>
+          <li>Address format bundles both public keys; transactions carry both signatures.</li>
+        </ul>
+        <h3>2.2 Randomness (VRF)</h3>
+        <ul>
+          <li>Validator selection with verifiable random functions.</li>
+          <li>Bias-resistant, publicly verifiable randomness beacons.</li>
+        </ul>
+        <h3>2.3 Audits & Bug bounty</h3>
+        <p>Third-party audits precede major releases; public bug bounty with severity tiers.</p>
+      </section>
+
+      <section class="card wp-section" id="consensus">
+        <h2>3. Consensus & Protocol</h2>
+        <p>Hybrid Proof-of-Stake with PQC-backed keys, fast finality, and rollup-friendly fork choice.</p>
+        <div class="wp-kv" style="margin-top:8px">
+          <div><span>Block time</span><span class="mono">~3–6s</span></div>
+          <div><span>Finality</span><span class="mono">&lt; 2 min</span></div>
+          <div><span>Tx size (hybrid)</span><span class="mono">+~1.5–2 KB</span></div>
+          <div><span>VRF epoch</span><span class="mono">~1,000 blocks</span></div>
+        </div>
+        <h3 style="margin-top:10px">Node Roles</h3>
+        <ul>
+          <li><strong>Validators:</strong> stake QSC, produce/attest blocks.</li>
+          <li><strong>Full nodes:</strong> verify all rules & signatures.</li>
+          <li><strong>Light clients:</strong> sync via succinct proofs.</li>
+        </ul>
+      </section>
+
+      <section class="card wp-section" id="tokenomics">
+        <h2>4. Tokenomics</h2>
+        <div class="wp-kv" style="margin-bottom:10px">
+          <div><span>Max supply</span><span class="mono">81,000,000 QSC</span></div>
+          <div><span>Ticker</span><span class="mono">QSC</span></div>
+          <div><span>Genesis</span><span class="mono">TBA (community audit)</span></div>
+        </div>
+        <h3>Initial Allocation (draft)</h3>
+        <ul>
+          <li>Community & Ecosystem: <strong>TBD</strong></li>
+          <li>Validators/Node Incentives: <strong>TBD</strong></li>
+          <li>R&amp;D & Grants: <strong>TBD</strong></li>
+          <li>Treasury (multi-sig): <strong>TBD</strong></li>
+        </ul>
+        <p class="small muted">*Draft sujeto a revisión pública antes de génesis.</p>
+        <h3 style="margin-top:10px">Issuance & Staking</h3>
+        <p>Emisión inicial enfocada en seguridad de red y liquidez de validadores, con reducción programática a medida que el ecosistema madura.</p>
+      </section>
+
+      <section class="card wp-section" id="privacy">
+        <h2>5. Privacy (zk)</h2>
+        <p>
+          Privacidad <strong>opt-in</strong> vía zk-SNARKs (Groth16/PLONK). Modo público y “notas” privadas.
+          Claves de visualización (view keys) y divulgación selectiva para cumplimiento.
+        </p>
+        <p class="small mono">Modes: public_tx | shielded_send | shielded_receive · Compliance: view_key</p>
+      </section>
+
+      <section class="card wp-section" id="aa">
+        <h2>6. Account Abstraction & UX</h2>
+        <ul>
+          <li>Patrón estilo <strong>ERC-4337</strong>: multi-firmas, social recovery, límites/policies.</li>
+          <li><strong>Gas relayers</strong>: pagar gas en QSC u otros activos soportados.</li>
+          <li>Wallets móviles: claves PQC y backups con Shamir Secret Sharing.</li>
+        </ul>
+      </section>
+
+      <section class="card wp-section" id="governance">
+        <h2>7. Governance</h2>
+        <p>Gobernanza on-chain minimalista con warm-up y timelock, voto ponderado por stake y quórums razonables.</p>
+      </section>
+
+      <section class="card wp-section" id="roadmap">
+        <h2>8. Roadmap</h2>
+        <ol class="roadmap">
+          <li class="done">Website + Litepaper</li>
+          <li>PQC wallet (hybrid keys) + public testnet</li>
+          <li>VRF + staking; auditoría 1</li>
+          <li>zk opt-in MVP; auditoría 2</li>
+          <li>Mainnet (fase 1) + ABIs estables</li>
+          <li>Rollup-ready L2 bridge + AA avanzada</li>
+        </ol>
+      </section>
+
+      <section class="card wp-section" id="risk">
+        <h2>9. Risks & Disclaimers</h2>
+        <ul>
+          <li><strong>Técnico:</strong> PQC & zk están en evolución.</li>
+          <li><strong>Regulatorio:</strong> cumplimiento varía por jurisdicción.</li>
+          <li><strong>Mercado:</strong> volatilidad alta; no es consejo financiero.</li>
+        </ul>
+        <p class="small muted">
+          Documento informativo y sujeto a cambios. El código abierto y las auditorías prevalecen como fuentes de verdad.
+        </p>
+      </section>
+
+      <div class="btn-row" style="margin-top:10px">
+        <a class="btn" href="./">← Back to Home</a>
+        <a class="btn" href="#" onclick="window.print();return false;">Save as PDF</a>
+      </div>
+      <a class="btn backtop" href="#toc">↑ Top</a>
+    </main>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- (Opcional) Google tag ya está en index; aquí no es obligatorio repetir -->
 </body>
 </html>
