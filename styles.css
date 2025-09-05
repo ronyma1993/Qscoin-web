@@ -17,6 +17,9 @@
   --btn-end:#4f6dff;
 
   --panel:#f8fbff;
+
+  --hover: rgba(15,23,42,.05);
+  --text-muted:#334155;
 }
 
 /* ---------- Dark mode ---------- */
@@ -37,11 +40,15 @@ html[data-theme="dark"]{
   --btn-end:#5ea2ff;
 
   --panel:#0e1526;
+
+  --hover: rgba(255,255,255,.06);
+  --text-muted:#b6c3db;
 }
 
 /* ---------- Base ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
+html{scroll-behavior:smooth}
 body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
@@ -72,7 +79,7 @@ h1,h2,h3{letter-spacing:.2px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .reveal.show{opacity:1;transform:none}
 
-/* ---------- HERO (home) ---------- */
+/* ---------- HERO ---------- */
 .hero{
   margin: 18px auto 14px; padding: 44px 18px 28px; text-align:center;
   border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow);
@@ -191,36 +198,31 @@ html[data-theme="dark"] .community-icons a{
   display:block; margin: 0 auto 8px;
   filter: drop-shadow(0 10px 22px rgba(0,0,0,.18));
 }
-.wp-hero .wp-sub{ color:#eef5ff; opacity:.95; margin:6px 0 10px; font-weight:600; }
+.wp-hero .wp-sub{
+  color:#eef5ff; opacity:.95; margin:6px 0 10px; font-weight:600;
+}
 
-/* TOC + contenido */
+/* ===== Whitepaper layout (TOC + content) ===== */
 .wp-grid{
   display:grid;
-  grid-template-columns:1fr;           /* móvil: una columna */
+  grid-template-columns:1fr;   /* móvil: una sola columna */
   gap:16px;
   align-items:start;
   margin-top:14px;
 }
+
 .wp-toc{
-  position: static;                    /* móvil: NO sticky */
+  position: static; /* móvil NO sticky */
+  margin: 0;
 }
-.wp-toc h2{ font-size: 20px; margin-bottom: 8px; }
-.wp-toc ol{ padding-left: 18px; display:grid; gap:6px; margin:0; }
-.wp-toc a{ color: var(--text); text-decoration: none; }
-.wp-toc a:hover{ text-decoration: underline; }
 
-.wp-content{ position:relative; z-index:0; min-width:0; }
-.wp-section{ margin:0; }
-.wp-section h2{ font-size:26px; margin-bottom:8px; }
-.wp-section h3{ font-size:18px; margin:10px 0 6px; }
-.wp-bullets{ padding-left:18px; display:grid; gap:6px; }
-.wp-kv{ list-style:none; padding-left:0; display:grid; gap:6px; }
-.wp-kv li{ display:flex; gap:8px; }
-.wp-kv li span{ min-width:120px; color:var(--muted); }
-.wp-compare{ border-top:1px dashed var(--border); padding-top:10px; margin-top:10px; }
-.wp-compare h3{ margin-bottom:6px; }
+.wp-content{
+  position: relative;
+  z-index: 0;
+  min-width: 0;
+}
 
-/* Sticky TOC sólo en desktop */
+/* Desktop/large */
 @media (min-width: 980px){
   .wp-grid{
     grid-template-columns: 300px 1fr;  /* TOC + contenido */
@@ -229,15 +231,46 @@ html[data-theme="dark"] .community-icons a{
   .wp-toc{
     position: sticky;
     top: 16px;
-    z-index: 0;                        /* no se superpone al contenido */
   }
 }
 
-/* Offset para anclas (evita que queden “pegadas” arriba) */
-[id]{ scroll-margin-top: 84px; }
-
-/* Realce suave cuando llegas a una sección por hash */
-.wp-section:target{
-  outline: 2px solid rgba(79,140,255,.25);
-  border-radius: 12px;
+/* ===== TOC visual ===== */
+.wp-toc.card { padding: 18px; }
+.wp-toc h2, .wp-toc h3 { font-size: 22px; margin-bottom: 8px; }
+.wp-toc nav ol, .wp-toc nav ul { list-style:none; padding-left:0; margin:0; }
+.wp-toc nav li{ margin: 4px 0; }
+.wp-toc nav ol ol{ padding-left: 14px; }
+.wp-toc nav a{
+  display:block;
+  text-decoration:none;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease;
 }
+.wp-toc nav a:hover{ background: var(--hover); color: var(--text); }
+.wp-toc nav a.active{
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: inset 0 0 0 2px var(--border);
+  font-weight: 800;
+}
+@media (min-width: 980px){
+  .wp-toc nav a.active{ box-shadow: inset 3px 0 0 var(--btn-end); }
+}
+
+/* Secciones WP */
+.wp-section{ margin-top:14px; }
+.wp-section h2{ font-size:26px; margin-bottom:8px; }
+.wp-section h3{ font-size:18px; margin:10px 0 6px; }
+.wp-bullets{ padding-left:18px; display:grid; gap:6px; }
+.wp-kv{ list-style:none; padding-left:0; display:grid; gap:6px; }
+.wp-kv li{ display:flex; gap:8px; }
+.wp-kv li span{ min-width:120px; color:var(--muted); }
+
+.wp-compare{ border-top:1px dashed var(--border); padding-top:10px; margin-top:10px; }
+.wp-compare h3{ margin-bottom:6px; }
+
+/* Acciones al final del WP */
+.wp-actions .actions { justify-content: center; }
