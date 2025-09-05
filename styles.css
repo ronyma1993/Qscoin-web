@@ -171,3 +171,52 @@ html[data-theme="dark"] .community-icons a{
 
 /* ---------- Footer ---------- */
 .site-footer{text-align:center;color:var(--muted);font-size:14px;padding:26px 12px 40px}
+/* ===== Whitepaper specific ===== */
+.wp-container { max-width: 980px; }
+
+.wp-hero{
+  text-align:center;
+  padding: 32px 16px 22px;
+  border-radius: 20px;
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+  color:#fff;
+  background:
+    radial-gradient(220px 160px at 50% 90px, rgba(255,255,255,.70), rgba(255,255,255,0) 62%),
+    linear-gradient(180deg, var(--blue-1), var(--blue-2) 55%, var(--blue-3));
+}
+.wp-hero .hero-logo{
+  width: clamp(180px, 30vw, 240px);
+  display:block; margin: 0 auto 8px;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.18));
+}
+.wp-hero .wp-sub{
+  color:#eef5ff; opacity:.95; margin:6px 0 10px; font-weight:600;
+}
+
+.wp-toc{
+  position: sticky; top: 12px;
+  margin-top: 14px;
+}
+.wp-toc h2{ font-size: 20px; margin-bottom: 8px; }
+.wp-toc ol{ padding-left: 18px; display:grid; gap:6px; }
+.wp-toc a{ color: var(--text); text-decoration: none; }
+.wp-toc a:hover{ text-decoration: underline; }
+
+.wp-section{ margin-top:14px; }
+.wp-section h2{ font-size:26px; margin-bottom:8px; }
+.wp-section h3{ font-size:18px; margin:10px 0 6px; }
+
+.wp-bullets{ padding-left:18px; display:grid; gap:6px; }
+.wp-kv{ list-style:none; padding-left:0; display:grid; gap:6px; }
+.wp-kv li{ display:flex; gap:8px; }
+.wp-kv li span{ min-width:120px; color:var(--muted); }
+
+.wp-compare{ border-top:1px dashed var(--border); padding-top:10px; margin-top:10px; }
+.wp-compare h3{ margin-bottom:6px; }
+
+html[data-theme="dark"] .wp-hero{
+  background:
+    radial-gradient(220px 160px at 50% 90px, rgba(255,255,255,.12), rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, var(--blue-1), var(--blue-2) 55%, var(--blue-3));
+}
