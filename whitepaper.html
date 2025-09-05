@@ -1,15 +1,24 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QSCOIN • Whitepaper (Draft)</title>
-  <meta name="description" content="QSCOIN whitepaper — quantum-safe cryptocurrency, hybrid PQC, zk rollups, PoS/VRF, account abstraction, and more." />
+  <meta name="description" content="QSCOIN whitepaper — quantum-safe cryptocurrency, hybrid PQC, zk rollups, PoS/VRF, account abstraction." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JKXGE8BKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1JKXGE8BKX');
+  </script>
 </head>
 <body>
 
@@ -19,15 +28,17 @@
   </button>
 
   <div class="container wp-container">
-    <!-- HERO (usa .wp-hero para coincidir con tu CSS) -->
+
+    <!-- HERO -->
     <header class="wp-hero reveal show" id="hero">
       <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo" />
       <h1 class="hero-tagline">QSCOIN Whitepaper</h1>
-      <p class="wp-sub">Quantum-Safe • Hybrid PQC • zk Privacy • PoS + VRF • 81,000,000 max supply</p>
+      <p class="wp-sub">Quantum-Safe • Hybrid PQC • zk Privacy • PoS + VRF • Max supply 81,000,000</p>
 
       <div class="actions">
         <a class="btn" href="index.html#top">← Back to Home</a>
         <a class="btn" href="whitepaper.pdf" target="_blank" rel="noopener">Open PDF</a>
+        <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
       </div>
 
       <ul class="hero-bullets">
@@ -38,39 +49,43 @@
       </ul>
     </header>
 
-    <!-- GRID: TOC + CONTENT -->
+    <!-- GRID: TOC + CONTENT  -->
     <div class="wp-grid">
 
-      <!-- TOC -->
-      <aside class="wp-toc card reveal show" aria-label="Table of contents">
+      <!-- TOC - jerárquico con scroll-spy -->
+      <aside class="wp-toc card reveal show">
         <h2>Contents</h2>
-        <ol>
-          <li><a href="#abstract">Abstract</a></li>
-          <li><a href="#vision">1. Vision & Principles</a></li>
-          <li>
-            <a href="#crypto">2. Cryptography & Security</a>
-            <ol>
-              <li><a href="#crypto-hybrid">2.1 Hybrid Signatures</a></li>
-              <li><a href="#crypto-vrf">2.2 Randomness (VRF)</a></li>
-              <li><a href="#crypto-audit">2.3 Audit & Bug-bounty</a></li>
-            </ol>
-          </li>
-          <li>
-            <a href="#consensus">3. Consensus & Protocol</a>
-            <ol>
-              <li><a href="#consensus-pos">3.1 PoS + VRF</a></li>
-              <li><a href="#consensus-zk">3.2 zk Rollups (L2)</a></li>
-              <li><a href="#consensus-fees">3.3 Fees & MEV controls</a></li>
-            </ol>
-          </li>
-          <li><a href="#tokenomics">4. Tokenomics</a></li>
-          <li><a href="#privacy">5. Privacy (zk)</a></li>
-          <li><a href="#ux">6. Account Abstraction & UX</a></li>
-          <li><a href="#governance">7. Governance</a></li>
-          <li><a href="#roadmap">8. Roadmap</a></li>
-          <li><a href="#risks">9. Risks & Disclaimers</a></li>
-          <li><a href="#comparative">10. Comparative Landscape</a></li>
-        </ol>
+        <nav aria-label="Table of contents">
+          <ol>
+            <li><a href="#abstract">Abstract</a></li>
+            <li>
+              <a href="#vision">1. Vision & Principles</a>
+            </li>
+            <li>
+              <a href="#crypto">2. Cryptography & Security</a>
+              <ol>
+                <li><a href="#crypto-hybrid">2.1 Hybrid Signatures</a></li>
+                <li><a href="#crypto-vrf">2.2 Randomness (VRF)</a></li>
+                <li><a href="#crypto-audit">2.3 Audit & Bug-bounty</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#consensus">3. Consensus & Protocol</a>
+              <ol>
+                <li><a href="#consensus-pos">3.1 PoS + VRF</a></li>
+                <li><a href="#consensus-zk">3.2 zk Rollups (L2)</a></li>
+                <li><a href="#consensus-fees">3.3 Fees & MEV controls</a></li>
+              </ol>
+            </li>
+            <li><a href="#tokenomics">4. Tokenomics</a></li>
+            <li><a href="#privacy">5. Privacy (zk)</a></li>
+            <li><a href="#ux">6. Account Abstraction & UX</a></li>
+            <li><a href="#governance">7. Governance</a></li>
+            <li><a href="#roadmap">8. Roadmap</a></li>
+            <li><a href="#risks">9. Risks & Disclaimers</a></li>
+            <li><a href="#comparative">10. Comparative Analysis</a></li>
+          </ol>
+        </nav>
       </aside>
 
       <!-- CONTENT -->
@@ -146,9 +161,9 @@
         <section id="tokenomics" class="card wp-section">
           <h2>4. Tokenomics</h2>
           <ul class="wp-kv">
-            <li><span><strong>Max supply:</strong></span> 81,000,000 QSC</li>
-            <li><span><strong>Initial inflation:</strong></span> conservative, decaying to a low steady rate or 0 (TBD by governance)</li>
-            <li><span><strong>Use:</strong></span> staking, fees, governance, security incentives</li>
+            <li><span>Max supply:</span> <strong>81,000,000 QSC</strong></li>
+            <li><span>Use:</span> staking, fees, governance, security incentives</li>
+            <li><span>Inflation:</span> conservative inicial; decaimiento hasta tasa baja o 0 (TBD)</li>
           </ul>
 
           <h3>Initial Allocation (Draft)</h3>
@@ -201,60 +216,60 @@
           <ul class="wp-bullets">
             <li>Cryptography shifts and PQ assumptions may evolve.</li>
             <li>Economic parameters can change via governance.</li>
-            <li>No investment advice; high risk technology.</li>
+            <li>No investment advice; high-risk technology.</li>
           </ul>
         </section>
 
         <!-- COMPARATIVA -->
-        <section id="comparative" class="card wp-section wp-compare">
-          <h2>10. Comparative Landscape</h2>
+        <section id="comparative" class="card wp-section">
+          <h2>10. Comparative Analysis</h2>
 
-          <h3>Bitcoin (BTC)</h3>
-          <p>
-            SHA-256/ECDSA (no-PQC), PoW robusto pero alto coste/latencia. QSCOIN prioriza
-            <em>hoy</em> defensa cuántica y UX (AA, zk), manteniendo seguridad fuerte
-            con PoS + VRF y rollups.
-          </p>
+          <div class="wp-compare">
+            <h3>Bitcoin (BTC)</h3>
+            <p>SHA-256/ECDSA (no-PQC), PoW robusto pero alto coste/latencia. QSCOIN prioriza defensa cuántica y UX (AA, zk), manteniendo seguridad con PoS + VRF y rollups.</p>
+          </div>
 
-          <h3>Ethereum (ETH)</h3>
-          <p>
-            PoS + rollups, enorme ecosistema. QSCOIN nace <em>quantum-ready</em> (híbrido PQC),
-            empujando AA y pagos zk integrados por defecto.
-          </p>
+          <div class="wp-compare">
+            <h3>Ethereum (ETH)</h3>
+            <p>PoS + rollups, enorme ecosistema. QSCOIN nace <em>quantum-ready</em> (híbrido PQC) y empuja AA + pagos zk integrados por defecto.</p>
+          </div>
 
-          <h3>Solana (SOL)</h3>
-          <p>
-            Altísimo throughput (PoH/PoS), enfoque monolítico; no PQC nativo. QSCOIN opta
-            por modularidad con rollups y firmas híbridas resistentes a PQ.
-          </p>
+          <div class="wp-compare">
+            <h3>Solana (SOL)</h3>
+            <p>Altísimo throughput (PoH/PoS), enfoque monolítico; sin PQC nativo. QSCOIN elige modularidad con rollups y firmas híbridas resistentes a PQ.</p>
+          </div>
 
-          <h3>Tezos (XTZ)</h3>
-          <p>
-            On-chain governance y upgrades elegantes; hoy sin PQC de base. QSCOIN integra
-            PQC/AA/zk desde el diseño inicial.
-          </p>
+          <div class="wp-compare">
+            <h3>Tezos (XTZ)</h3>
+            <p>On-chain governance y upgrades elegantes; hoy sin PQC base. QSCOIN integra PQC/AA/zk desde el diseño inicial.</p>
+          </div>
 
-          <h3>QRL</h3>
-          <p>
-            Proyecto pionero en PQC (XMSS) con trade-offs de rendimiento y UX. QSCOIN busca
-            equilibrio práctico: híbrido PQ + clásico, AA, zk-rollups y compatibilidad de
-            hardware.
-          </p>
+          <div class="wp-compare">
+            <h3>QRL</h3>
+            <p>Pionero PQC (XMSS) con trade-offs de rendimiento/UX. QSCOIN busca equilibrio práctico: híbrido PQ + clásico, AA, zk-rollups y compatibilidad de hardware.</p>
+          </div>
         </section>
+
+        <!-- Botones finales -->
+        <div class="wp-actions card">
+          <h3>Explore More</h3>
+          <div class="actions">
+            <a class="btn" href="index.html">← Back to Home</a>
+            <a class="btn" href="#hero">↑ Go to Top</a>
+            <a class="btn" href="whitepaper.pdf" target="_blank" rel="noopener">Download PDF</a>
+            <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
+          </div>
+        </div>
 
       </div><!-- /.wp-content -->
     </div><!-- /.wp-grid -->
 
-    <footer class="site-footer">
-      © <span id="y"></span> QSCOIN — All rights reserved
-    </footer>
+    <footer class="site-footer">© 2025 QSCOIN — All rights reserved</footer>
   </div><!-- /.container -->
 
+  <!-- Theme toggle & scroll-spy -->
   <script>
-    // Año
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Theme toggle persistente
+    // Dark/Light toggle
     (function(){
       const btn = document.getElementById('themeToggle');
       if(!btn) return;
@@ -262,11 +277,64 @@
       const saved = localStorage.getItem('theme');
       if(saved) root.setAttribute('data-theme', saved);
       btn.addEventListener('click', () => {
-        const next = (root.getAttribute('data-theme')||'light') === 'light' ? 'dark' : 'light';
-        root.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        btn.querySelector('span').textContent = next === 'dark' ? 'Light' : 'Dark';
-        btn.querySelector('i').textContent = next === 'dark' ? '☀️' : '🌙';
+        const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', cur);
+        localStorage.setItem('theme', cur);
+        btn.querySelector('span').textContent = cur === 'dark' ? 'Light' : 'Dark';
+      });
+    })();
+
+    // Scroll-spy para el TOC (activa hijos y padre)
+    (function(){
+      const toc = document.querySelector('.wp-toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
+      const linkById = new Map(
+        links.map(a => [decodeURIComponent(a.getAttribute('href').slice(1)), a])
+      );
+
+      const sections = Array.from(document.querySelectorAll('.wp-section[id]'));
+      let activeId = null;
+
+      const setActive = (id) => {
+        if (activeId === id) return;
+
+        if (activeId && linkById.get(activeId)) {
+          const oldA = linkById.get(activeId);
+          oldA.classList.remove('active');
+          const parent = oldA.closest('ol').previousElementSibling;
+          if (parent && parent.tagName === 'A') parent.classList.remove('active');
+        }
+
+        if (id && linkById.get(id)) {
+          const a = linkById.get(id);
+          a.classList.add('active');
+          const parent = a.closest('ol').previousElementSibling;
+          if (parent && parent.tagName === 'A') parent.classList.add('active');
+        }
+
+        activeId = id || null;
+      };
+
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          const id = entry.target.id;
+          if (entry.isIntersecting){ setActive(id); }
+        });
+      }, { rootMargin: "-25% 0px -70% 0px", threshold: [0.25, 0.6] });
+
+      sections.forEach(sec => io.observe(sec));
+
+      window.addEventListener('load', () => {
+        const id = decodeURIComponent(location.hash.replace('#',''));
+        if (id) setActive(id);
+      });
+
+      links.forEach(a=>{
+        a.addEventListener('click', () => {
+          setTimeout(() => setActive(decodeURIComponent(a.getAttribute('href').slice(1))), 200);
+        });
       });
     })();
   </script>
