@@ -1,234 +1,111 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QSCOIN — Quantum-Safe Cryptocurrency</title>
-  <meta name="description" content="QSCOIN is a quantum-safe cryptocurrency using post-quantum cryptography (PQC) with a community-first roadmap." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QSCOIN • Quantum-Safe Cryptocurrency</title>
+  <meta name="description" content="QSCOIN is a quantum-safe cryptocurrency with hybrid PQC signatures, zk privacy, PoS+VRF, and great UX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.png" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="QSCOIN — Quantum-Safe Cryptocurrency">
-  <meta property="og:description" content="Future-proof security with post-quantum cryptography (PQC).">
-  <meta property="og:image" content="og-image.png">
-  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JKXGE8BKX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-1JKXGE8BKX');
   </script>
 </head>
 <body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i>🌙</i><span>Dark</span></button>
 
-  <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <i>🌙</i><span>Dark</span>
-  </button>
-
-  <main class="container">
-
-    <!-- HERO -->
-    <section class="hero reveal">
+  <div class="container" id="top">
+    <header class="hero reveal show">
       <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo">
       <h1 class="hero-tagline">Quantum-Safe Cryptocurrency</h1>
-
       <div class="actions">
-        <a class="btn" href="/whitepaper">Whitepaper</a>
+        <a class="btn" href="whitepaper.html">Whitepaper</a>
         <a class="btn" href="https://t.me/QSC_Official" target="_blank" rel="noopener">Join Community</a>
       </div>
-
       <ul class="hero-bullets">
         <li>Future-proof security</li>
         <li>Post-quantum cryptography</li>
         <li>Open development</li>
       </ul>
-    </section>
+    </header>
 
-    <!-- What is QSCOIN -->
-    <section class="card reveal" id="about">
+    <section class="card reveal show">
       <h2>What is QSCOIN?</h2>
       <p>
-        QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers.
-        We use post-quantum cryptography (PQC) to protect keys, transactions and wallets against quantum attacks,
-        keeping your assets safe for the long term.
+        QSCOIN is a next-generation cryptocurrency designed to remain secure in a world with quantum computers. 
+        We use post-quantum cryptography (PQC) together with classical primitives (hybrid signatures),
+        zk-rollups for scalability & optional privacy, and a PoS + VRF consensus.
       </p>
     </section>
 
-    <!-- Three pillars -->
-    <section class="grid reveal">
-      <article class="card">
-        <h3>🔒 Quantum-Safe</h3>
-        <p>Hybrid signature schemes (PQC + classical) to ensure security today and tomorrow.</p>
-      </article>
-      <article class="card">
-        <h3>⚡ Fast & Scalable</h3>
-        <p>Low fees and fast confirmations without sacrificing security.</p>
-      </article>
-      <article class="card">
-        <h3>🌐 Community-Driven</h3>
-        <p>Transparent roadmap, open development and inclusive governance over time.</p>
-      </article>
+    <section class="grid">
+      <div class="card"><h3>Quantum-Safe</h3><p>Hybrid signature schemes (PQC + classical) to ensure security today and tomorrow.</p></div>
+      <div class="card"><h3>Fast & Scalable</h3><p>zk rollups + PoS help deliver low fees and fast confirmations without sacrificing security.</p></div>
+      <div class="card"><h3>Community-Driven</h3><p>Transparent roadmap, open development and inclusive governance.</p></div>
     </section>
 
-    <!-- Tokenomics -->
-    <section class="card reveal" id="token">
+    <section class="card">
       <h2>Tokenomics</h2>
       <ul class="tokenomics">
         <li><strong>Ticker:</strong> QSC</li>
-        <li><strong>Supply (max):</strong> 81,000,000 QSC</li>
-        <li><strong>Consensus (R&D):</strong> Hybrid + PQC</li>
-        <li><strong>Allocation (draft):</strong> Community-first</li>
+        <li><strong>Max supply:</strong> 81,000,000</li>
+        <li><strong>Use:</strong> staking, fees, governance, incentives</li>
       </ul>
-      <p class="note">* Figures above are work-in-progress and subject to community review.</p>
     </section>
 
-    <!-- Roadmap -->
-    <section class="card reveal" id="roadmap">
-      <h2>Roadmap</h2>
-      <ol class="roadmap">
-        <li class="done">Phase 1 — Launch website & litepaper</li>
-        <li>Phase 2 — Community growth & partnerships</li>
-        <li>Phase 3 — Listing & wallet integrations</li>
-        <li>Phase 4 — Global adoption & ecosystem</li>
-      </ol>
-    </section>
-
-    <!-- FAQ -->
-    <section class="card reveal" id="faq">
+    <section class="card">
       <h2>FAQ</h2>
-
       <div class="accordion">
-        <div class="accordion-item">
+        <article class="accordion-item">
           <h3 class="accordion-header">
             <button class="accordion-trigger" aria-expanded="false">
-              <span>What makes QSCOIN “quantum-safe”?</span>
-              <i class="chev"></i>
+              Is QSCOIN quantum-safe?
+              <span class="chev" aria-hidden="true"></span>
             </button>
           </h3>
-          <div class="accordion-panel" hidden>
-            <p>
-              We combine classical signatures with post-quantum schemes (PQC) in a hybrid approach to remain secure
-              today and resilient against future quantum adversaries.
-            </p>
+          <div class="accordion-panel">
+            <p>Yes. We integrate hybrid signatures (classical + PQC) and plan zk features for privacy.</p>
           </div>
-        </div>
-
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span>Is there a testnet? When?</span>
-              <i class="chev"></i>
-            </button>
-          </h3>
-          <div class="accordion-panel" hidden>
-            <p>Testnet milestones will be announced in Phase 2. Join the Telegram to get updates.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span>How can I participate?</span>
-              <i class="chev"></i>
-            </button>
-          </h3>
-          <div class="accordion-panel" hidden>
-            <p>Join the community, contribute feedback, help with testing, and participate in governance as it rolls out.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span>Is QSCOIN audited?</span>
-              <i class="chev"></i>
-            </button>
-          </h3>
-          <div class="accordion-panel" hidden>
-            <p>Security audits will be scheduled before mainnet. We’ll publish reports and fixes transparently.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span>What are the main risks?</span>
-              <i class="chev"></i>
-            </button>
-          </h3>
-          <div class="accordion-panel" hidden>
-            <p>Crypto is volatile and R&D is ongoing. PQC standards and ecosystem integrations may evolve over time.</p>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- Community footer -->
-    <section class="card reveal" id="community">
-      <h2>Join the community</h2>
-      <p>Be part of the quantum-safe future. Follow updates and join the discussion:</p>
-      <div class="community-icons">
-        <a href="https://t.me/QSC_Official" target="_blank" aria-label="Telegram">TG</a>
-        <a href="https://x.com" target="_blank" aria-label="X / Twitter">X</a>
-        <a href="https://github.com" target="_blank" aria-label="GitHub">GH</a>
-        <a href="mailto:team@qscoin.org" aria-label="Email">✉︎</a>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      © <span id="y"></span> QSCOIN — All rights reserved.
-    </footer>
-
-  </main>
+    <footer class="site-footer">© 2025 QSCOIN — All rights reserved</footer>
+  </div>
 
   <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Reveal on load
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+    // Dark/Light toggle
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      if(!btn) return;
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if(saved) root.setAttribute('data-theme', saved);
+      btn.addEventListener('click', () => {
+        const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', cur);
+        localStorage.setItem('theme', cur);
+        btn.querySelector('span').textContent = cur === 'dark' ? 'Light' : 'Dark';
       });
-    }, {threshold:.12});
-    reveals.forEach(el=>io.observe(el));
+    })();
 
-    // Theme toggle
-    const toggle = document.getElementById('themeToggle');
-    const setTheme = (t) => document.documentElement.setAttribute('data-theme', t);
-    const stored = localStorage.getItem('theme');
-    if (stored) setTheme(stored);
-    toggle.addEventListener('click', ()=>{
-      const cur = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = cur === 'light' ? 'dark' : 'light';
-      setTheme(next);
-      localStorage.setItem('theme', next);
-      toggle.querySelector('span').textContent = next === 'dark' ? 'Light' : 'Dark';
-      toggle.querySelector('i').textContent = next === 'dark' ? '☀️' : '🌙';
-    });
-
-    // Accordion
+    // Simple accordion
     document.querySelectorAll('.accordion-trigger').forEach(btn=>{
       btn.addEventListener('click', ()=>{
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
         const panel = btn.closest('.accordion-item').querySelector('.accordion-panel');
-        if (expanded) {
-          panel.hidden = true;
-          panel.style.maxHeight = 0;
-          panel.style.paddingBottom = 0;
-        } else {
-          panel.hidden = false;
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          panel.style.paddingBottom = '12px';
-        }
+        if(!open){ panel.classList.add('open'); panel.style.maxHeight = panel.scrollHeight + 'px'; panel.style.paddingBottom='12px'; }
+        else { panel.classList.remove('open'); panel.style.maxHeight='0'; panel.style.paddingBottom='0'; }
       });
     });
   </script>
