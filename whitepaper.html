@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,18 +13,17 @@
 </head>
 <body>
 
-  <!-- Theme toggle (opcional, funciona con el mismo JS simple del index si lo usas) -->
+  <!-- Theme toggle -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
     <i>🌙</i><span>Dark</span>
   </button>
 
-  <div class="container">
-
-    <!-- HERO -->
-    <header class="hero reveal show" id="hero">
+  <div class="container wp-container">
+    <!-- HERO (usa .wp-hero para coincidir con tu CSS) -->
+    <header class="wp-hero reveal show" id="hero">
       <img class="hero-logo" src="logo-transparent.png" alt="QSCOIN logo" />
       <h1 class="hero-tagline">QSCOIN Whitepaper</h1>
-      <p>Quantum-Safe • Hybrid PQC • zk Privacy • PoS + VRF • 81,000,000 max supply</p>
+      <p class="wp-sub">Quantum-Safe • Hybrid PQC • zk Privacy • PoS + VRF • 81,000,000 max supply</p>
 
       <div class="actions">
         <a class="btn" href="index.html#top">← Back to Home</a>
@@ -39,12 +38,12 @@
       </ul>
     </header>
 
-    <!-- GRID: TOC + CONTENT  -->
+    <!-- GRID: TOC + CONTENT -->
     <div class="wp-grid">
 
       <!-- TOC -->
-      <aside class="wp-toc card reveal show">
-        <h3>Contents</h3>
+      <aside class="wp-toc card reveal show" aria-label="Table of contents">
+        <h2>Contents</h2>
         <ol>
           <li><a href="#abstract">Abstract</a></li>
           <li><a href="#vision">1. Vision & Principles</a></li>
@@ -91,7 +90,7 @@
 
         <section id="vision" class="card wp-section">
           <h2>1. Vision & Principles</h2>
-          <ul>
+          <ul class="wp-bullets">
             <li><strong>Quantum-safe by default:</strong> protect users today and tomorrow.</li>
             <li><strong>Pragmatic privacy:</strong> zk for payments & proofs without harming compliance.</li>
             <li><strong>Human UX:</strong> AA wallets, social recovery, and session keys.</li>
@@ -146,10 +145,10 @@
 
         <section id="tokenomics" class="card wp-section">
           <h2>4. Tokenomics</h2>
-          <ul>
-            <li><strong>Max supply:</strong> 81,000,000 QSC</li>
-            <li><strong>Initial inflation:</strong> conservative, decaying to a low steady rate or 0 (TBD by governance)</li>
-            <li><strong>Use:</strong> staking, fees, governance, security incentives</li>
+          <ul class="wp-kv">
+            <li><span><strong>Max supply:</strong></span> 81,000,000 QSC</li>
+            <li><span><strong>Initial inflation:</strong></span> conservative, decaying to a low steady rate or 0 (TBD by governance)</li>
+            <li><span><strong>Use:</strong></span> staking, fees, governance, security incentives</li>
           </ul>
 
           <h3>Initial Allocation (Draft)</h3>
@@ -172,7 +171,7 @@
 
         <section id="ux" class="card wp-section">
           <h2>6. Account Abstraction & UX</h2>
-          <ul>
+          <ul class="wp-bullets">
             <li>Passkeys/social recovery; multi-device MPC</li>
             <li>Session keys & batched actions; gas-sponsored flows</li>
             <li>Human-readable handles and safety checks for destinations</li>
@@ -199,15 +198,15 @@
 
         <section id="risks" class="card wp-section">
           <h2>9. Risks & Disclaimers</h2>
-          <ul>
+          <ul class="wp-bullets">
             <li>Cryptography shifts and PQ assumptions may evolve.</li>
             <li>Economic parameters can change via governance.</li>
             <li>No investment advice; high risk technology.</li>
           </ul>
         </section>
 
-        <!-- COMPARATIVA (resumen de lo que discutimos) -->
-        <section id="comparative" class="card wp-section">
+        <!-- COMPARATIVA -->
+        <section id="comparative" class="card wp-section wp-compare">
           <h2>10. Comparative Landscape</h2>
 
           <h3>Bitcoin (BTC)</h3>
@@ -244,16 +243,18 @@
         </section>
 
       </div><!-- /.wp-content -->
-
     </div><!-- /.wp-grid -->
 
     <footer class="site-footer">
-      © 2025 QSCOIN — All rights reserved
+      © <span id="y"></span> QSCOIN — All rights reserved
     </footer>
   </div><!-- /.container -->
 
-  <!-- (Opcional) mini JS para el toggle de tema si ya lo usas en index -->
   <script>
+    // Año
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Theme toggle persistente
     (function(){
       const btn = document.getElementById('themeToggle');
       if(!btn) return;
@@ -261,13 +262,13 @@
       const saved = localStorage.getItem('theme');
       if(saved) root.setAttribute('data-theme', saved);
       btn.addEventListener('click', () => {
-        const cur = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', cur);
-        localStorage.setItem('theme', cur);
-        btn.querySelector('span').textContent = cur === 'dark' ? 'Light' : 'Dark';
+        const next = (root.getAttribute('data-theme')||'light') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        btn.querySelector('span').textContent = next === 'dark' ? 'Light' : 'Dark';
+        btn.querySelector('i').textContent = next === 'dark' ? '☀️' : '🌙';
       });
     })();
   </script>
-
 </body>
 </html>
